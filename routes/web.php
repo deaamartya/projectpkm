@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/home', 'PageController@home');
+Route::get('/sejarah-pkm', 'PageController@sejarah');
+Route::get('/tujuan-pkm', 'PageController@tujuan');
+Route::get('/karakteristik-umum', 'PageController@karakteristik');
+Route::get('/kriteria-bidang', 'PageController@kriteria');
+Route::get('/tata-cara', 'PageController@tatacara');
+Route::get('/aspek-penilaian', 'PageController@aspekpenilaian');
