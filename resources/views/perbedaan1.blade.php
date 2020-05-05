@@ -174,23 +174,11 @@ $(document).ready(function() {
 		// console.log(el[0].innerHTML);
 		var flag_inti = false;
 		console.log(el.length);
-		for(var i=0;i<el.length;i++){
-			if(flag_inti == true || i==0){
-				if(el[i].innerHTML!=""){
-					console.log("loop ke-"+i+" tidaklah kosong!");
-					if(el[i].innerHTML != el[i++].innerHTML){
-						console.log("aku masuk breakk");
-						break;
-					}
-					else{
-						console.log("sama wahhh!"+"loop ke-"+i+" "+el[i].innerHTML+" == "+el[i++].innerHTML);
-	    				flag_inti = true;
-	    			}
-	    			
-				}
-			}
-			console.log("aku loop ke-"+i);
+		if(el[0].innerHTML == el[1].innerHTML && el[2].innerHTML == el[3].innerHTML){
+			flag_inti = true;
 		}
+		console.log("aku loop ke-"+i);
+
 		if(flag_inti == true){
 			for(var i=1;i<el.length;i++){
 				el[i].innerHTML = "Tidak ada perbedaan";
