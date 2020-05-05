@@ -146,11 +146,11 @@ $(document).ready(function() {
 				$("#pendanaan"+idselect).html(bidang[4]["URAIAN_KRITERIA"]);
 				$("#luaran"+idselect).html(bidang[5]["URAIAN_KRITERIA"]);
 				hideDifference("intikegiatan");
-				hideDifference("kriteriailmu");
-				hideDifference("pendidikan");
-				hideDifference("anggota");
-				hideDifference("pendanaan");
-				hideDifference("luaran");
+				// hideDifference("kriteriailmu");
+				// hideDifference("pendidikan");
+				// hideDifference("anggota");
+				// hideDifference("pendanaan");
+				// hideDifference("luaran");
             },
             error: function(data) {
               // console.log(data);
@@ -173,20 +173,23 @@ $(document).ready(function() {
     	var el = document.getElementsByClassName(kelas);
 		// console.log(el[0].innerHTML);
 		var flag_inti = false;
-		
+		console.log(el.length);
 		for(var i=0;i<el.length;i++){
-			
-			if(el[i].innerHTML!="" && el[i++].innerHTML!=""){
-				if(el[i].innerHTML !== el[i++].innerHTML){
-					flag_inti = false;
-					break;
+			if(flag_inti == true || i==0){
+				if(el[i].innerHTML!=""){
+					console.log("loop ke-"+i+" tidaklah kosong!");
+					if(el[i].innerHTML != el[i++].innerHTML){
+						console.log("aku masuk breakk");
+						break;
+					}
+					else{
+						console.log("sama wahhh!"+"loop ke-"+i+" "+el[i].innerHTML+" == "+el[i++].innerHTML);
+	    				flag_inti = true;
+	    			}
+	    			
 				}
-				else{
-					console.log("sama wahhh!"+"loop ke-"+i+" "+el[i].innerHTML+" == "+el[i++].innerHTML);
-    				flag_inti = true;
-    			}
-    			console.log(i);
 			}
+			console.log("aku loop ke-"+i);
 		}
 		if(flag_inti == true){
 			for(var i=1;i<el.length;i++){
