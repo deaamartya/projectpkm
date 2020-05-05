@@ -10,22 +10,22 @@
 		<div class="row p-0 m-0">
 			<div class="col-12 row align-items-center m-0"style="background-color: #3c3c3c;padding: 40px 40px 125px 80px;">
 				<div class="col-md-8 col-lg-8">
-					<form>
+					<form id="sendmail">
 					  <div class="form-row">
 					    <div class="form-group col-md-6">
-					      <input type="text" class="form-control" name="name" placeholder="Your Name">
+					      <input type="text" class="form-control" name="name" placeholder="Your Name" required>
 					    </div>
 					    <div class="form-group col-md-6">
-					      <input type="email" class="form-control" name="email" placeholder="Your Email">
+					      <input type="email" class="form-control" name="email" placeholder="Your Email" required>
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <input type="text" class="form-control" name="phone" placeholder="Nomor Wa">
+					    <input type="text" class="form-control" name="phone" placeholder="Nomor Wa" required>
 					  </div>
 					  <div class="form-group">
-					  	<textarea class="form-control" placeholder="Your Message"></textarea>
+					  	<textarea class="form-control" placeholder="Your Message" name="message" required></textarea>
 					  </div>
-					<button type="submit" class="float-right btn btn-primary text-right">Submit</button>
+					<button type="submit" class="float-right btn btn-primary text-right btn-submit">Submit</button>
 					</form>
 				</div>
 				<div class="col-md-4 col-lg-4 py-4 px-4 align-middle">
@@ -39,26 +39,20 @@
 		</div>
 		<div class="row m-0 py-1 justify-content-end" style="background-color: #2c4d86;">
 			<div class="col-2 align-self-center text-right">
-			<ul class="social-list">
-		    	<li class="li-youtube-play">
-		    		<a href="https://www.youtube.com/channel/UCxAYP6iE7pivhmQh-O_TJoQ" target="_balnk" data-toggle="tooltip" data-placement="top" title="" data-original-title="Youtube"><i class="fa fa-youtube-play"></i></a>
-		    	</li>
-		    	<li class="li-instagram">
-		    		<a href="https://www.instagram.com/pips.unair/" target="_balnk" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
-		    			<i class="fa fa-instagram"></i>
-		    		</a>
-		    	</li>
-		    	<li class="li-twitter">
-		    		<a href="https://twitter.com/PipsUnair" target="_balnk" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
-		    			<i class="fa fa-twitter"></i>
-		    		</a>
-		    	</li>
-		    	<li class="li-facebook">
-		    		<a href="https://www.facebook.com/PipsUnair.Official" target="_balnk" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
-		    			<i class="fa fa-facebook"></i>
-		    		</a>
-		    	</li>
-		    </ul>
+				<div class="container" style="font-size: 20pt;">
+					<a class="m-1" style="display: inline-block;" title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCUYwloXmWyNZplsqg4MVERw">
+				        <i class="fab fa-youtube" style="color: white"></i>
+				    </a>
+				    <a class="m-1" style="display: inline-block;" title="Instagram" target="_blank" href="https://www.instagram.com/univ_airlangga/">
+				        <i class="fab fa-instagram" style="color: white"></i>
+				    </a>
+				    <a class="m-1" style="display: inline-block;" title="Twitter" target="_blank" href="https://twitter.com/Unair_Official">
+				        <i class="fab fa-twitter" style="color: white"></i>
+				    </a>
+			        <a class="m-1" style="display: inline-block;" title="Facebook" target="_blank" href="https://www.facebook.com/universitasairlangga">
+				        <i class="fab fa-facebook" style="color: white"></i>
+				    </a>
+				</div>
 			</div>
 		</div>
 	</footer>

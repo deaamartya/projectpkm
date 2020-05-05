@@ -58,41 +58,6 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang4" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
 		</tr>
 		@endforeach
-		<!-- <tr>
-			<td>Kriteria Keilmuan</td>
-			<td id="kriteriailmubidang1" class="kriteriailmu"></td>
-			<td id="kriteriailmubidang2" class="kriteriailmu"></td>
-			<td id="kriteriailmubidang3" class="kriteriailmu"></td>
-			<td id="kriteriailmubidang4" class="kriteriailmu"></td>
-		</tr>
-		<tr>
-			<td>Pendidikan</td>
-			<td id="pendidikanbidang1" class="pendidikan"></td>
-			<td id="pendidikanbidang2" class="pendidikan"></td>
-			<td id="pendidikanbidang3" class="pendidikan"></td>
-			<td id="pendidikanbidang4" class="pendidikan"></td>
-		</tr>
-		<tr>
-			<td>Anggota</td>
-			<td id="anggotabidang1" class="anggota"></td>
-			<td id="anggotabidang2" class="anggota"></td>
-			<td id="anggotabidang3" class="anggota"></td>
-			<td id="anggotabidang4" class="anggota"></td>
-		</tr>
-		<tr>
-			<td>Pendanaan</td>
-			<td id="pendanaanbidang1" class="pendanaan"></td>
-			<td id="pendanaanbidang2" class="pendanaan"></td>
-			<td id="pendanaanbidang3" class="pendanaan"></td>
-			<td id="pendanaanbidang4" class="pendanaan"></td>
-		</tr>
-		<tr>
-			<td>Luaran</td>
-			<td id="luaranbidang1" class="luaran"></td>
-			<td id="luaranbidang2" class="luaran"></td>
-			<td id="luaranbidang3" class="luaran"></td>
-			<td id="luaranbidang4" class="luaran"></td>
-		</tr> -->
 	</tbody>
 	</table>
 </div>
@@ -106,7 +71,6 @@ $(document).ready(function() {
         $(this).removeClass("active");
     });
     clickedItem.addClass("active");
-    // $('#criteria').selectpicker('selectAll');
 
     $(".bidang").change(function(){
     	console.log($(this).attr('id')+" "+$(this).val()+" clicked!");
@@ -142,13 +106,11 @@ $(document).ready(function() {
             method: 'GET',
             success: function(data) {
 				var bidang = data.bidang;
-				$("#intikegiatan"+idselect).html(bidang[0]["URAIAN_KRITERIA"]);
-				$("#kriteriakeilmuan"+idselect).html(bidang[1]["URAIAN_KRITERIA"]);
-				$("#tingkatpendidikan"+idselect).html(bidang[2]["URAIAN_KRITERIA"]);
-				$("#jumlahanggota"+idselect).html(bidang[3]["URAIAN_KRITERIA"]);
-				$("#pendanaan"+idselect).html(bidang[4]["URAIAN_KRITERIA"]);
-				$("#luaran"+idselect).html(bidang[5]["URAIAN_KRITERIA"]);
-            },
+				var options = $("#criteria option");
+				for(var i=0;i<options.length;i++){
+					$("#"+options[i].value+idselect).html(bidang[i]["URAIAN_KRITERIA"]);
+				}
+			},
             error: function(data) {
               // console.log(data);
             }
@@ -171,9 +133,7 @@ $(document).ready(function() {
 
 	$("#criteria").change(function(){
 		var options = $("#criteria option");
-		console.log(options);
 		var kelas = $("#criteria").val();
-		console.log(kelas);
 		for(var i=0;i<options.length;i++){
 			$("."+options[i].value).parent().hide();
 		}
@@ -185,7 +145,7 @@ $(document).ready(function() {
     			hideDifference(kelas[i]);
     		}
     	}
-	})    
+	});   
 
     function hideDifference(kelas){
 

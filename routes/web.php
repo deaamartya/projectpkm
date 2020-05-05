@@ -25,3 +25,4 @@ Route::get('/tata-cara', 'PageController@tatacara');
 Route::get('/aspek-penilaian', 'PageController@aspekpenilaian');
 Route::get('/perbedaan-bidang', 'PageController@perbandingan');
 Route::get('/bidang/getData/{id}','PageController@getData');
+Route::post('/sendMail','PageController@sendMail');
