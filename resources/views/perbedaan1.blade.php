@@ -19,49 +19,51 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 		<tbody>
 		<tr>
 			<td>
-				<select class="selectpicker" data-live-search="false" name="criteria" data-size="5" title="Comparison Criteria">
-				@foreach($bidang as $b)
-				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+				<select class="selectpicker" id="criteria" data-size="5" title="Comparison Criteria" multiple>
+				@foreach($jenis_kriteria as $b)
+				<option value="{{$b->ID_JENIS_KRITERIA}}">{{$b->NAMA_JENIS}}</option>
 				@endforeach
 				</select><br>
 				<input type="checkbox" id="differ">Show Difference Only
 			</td>
 			<td>
-				<select class="selectpicker bidang" id="bidang1" data-live-search="false" name="bidang1" data-size="5" title="Pilih Bidang PKM">
+				<select class="selectpicker bidang" id="bidang1" data-size="5" title="Pilih Bidang PKM">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}" onclick="select('bidang1',{{$b->ID_BIDANG}})">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 				</select>
 			</td>
-			<td><select class="selectpicker bidang" id="bidang2" data-live-search="false" name="bidang2" data-size="5" title="Pilih Bidang PKM">
+			<td><select class="selectpicker bidang" id="bidang2" data-size="5" title="Pilih Bidang PKM">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 			</select></td>
-			<td><select class="selectpicker bidang" id="bidang3" data-live-search="false" name="bidang3" data-size="5" title="Pilih Bidang PKM">
+			<td><select class="selectpicker bidang" id="bidang3" data-size="5" title="Pilih Bidang PKM">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 			</select></td>
-			<td><select class="selectpicker bidang" id="bidang4" data-live-search="false" name="bidang4" data-size="5" title="Pilih Bidang PKM">
+			<td><select class="selectpicker bidang" id="bidang4" data-size="5" title="Pilih Bidang PKM">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 			</select></td>
 		</tr>
+		@foreach($jenis_kriteria as $b)
 		<tr>
-			<td>Inti Kegiatan</td>
-			<td id="intikegiatanbidang1" class="intikegiatan"></td>
-			<td id="intikegiatanbidang2" class="intikegiatan"></td>
-			<td id="intikegiatanbidang3" class="intikegiatan"></td>
-			<td id="intikegiatanbidang4" class="intikegiatan"></td>
+			<td>{{$b->NAMA_JENIS}}</td>
+			<td id="{{strtolower(trim($b->NAMA_JENIS))}}bidang1" class="{{strtolower(trim($b->NAMA_JENIS))}}"></td>
+			<td id="{{strtolower(trim($b->NAMA_JENIS))}}bidang2" class="{{strtolower(trim($b->NAMA_JENIS))}}"></td>
+			<td id="{{strtolower(trim($b->NAMA_JENIS))}}bidang3" class="{{strtolower(trim($b->NAMA_JENIS))}}"></td>
+			<td id="{{strtolower(trim($b->NAMA_JENIS))}}bidang4" class="{{strtolower(trim($b->NAMA_JENIS))}}"></td>
 		</tr>
-		<tr>
+		@endforeach
+		<!-- <tr>
 			<td>Kriteria Keilmuan</td>
-			<td id="kriteriabidang1" class="kriteriailmu"></td>
-			<td id="kriteriabidang2" class="kriteriailmu"></td>
-			<td id="kriteriabidang3" class="kriteriailmu"></td>
-			<td id="kriteriabidang4" class="kriteriailmu"></td>
+			<td id="kriteriailmubidang1" class="kriteriailmu"></td>
+			<td id="kriteriailmubidang2" class="kriteriailmu"></td>
+			<td id="kriteriailmubidang3" class="kriteriailmu"></td>
+			<td id="kriteriailmubidang4" class="kriteriailmu"></td>
 		</tr>
 		<tr>
 			<td>Pendidikan</td>
@@ -90,7 +92,7 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 			<td id="luaranbidang2" class="luaran"></td>
 			<td id="luaranbidang3" class="luaran"></td>
 			<td id="luaranbidang4" class="luaran"></td>
-		</tr>
+		</tr> -->
 	</tbody>
 	</table>
 </div>
@@ -145,12 +147,14 @@ $(document).ready(function() {
 				$("#anggota"+idselect).html(bidang[3]["URAIAN_KRITERIA"]);
 				$("#pendanaan"+idselect).html(bidang[4]["URAIAN_KRITERIA"]);
 				$("#luaran"+idselect).html(bidang[5]["URAIAN_KRITERIA"]);
-				hideDifference("intikegiatan");
-				// hideDifference("kriteriailmu");
-				// hideDifference("pendidikan");
-				// hideDifference("anggota");
-				// hideDifference("pendanaan");
-				// hideDifference("luaran");
+				if($("#differ").prop("checked") == true){
+					hideDifference("intikegiatan");
+					hideDifference("kriteriailmu");
+					hideDifference("pendidikan");
+					hideDifference("anggota");
+					hideDifference("pendanaan");
+					hideDifference("luaran");
+				}
             },
             error: function(data) {
               // console.log(data);
@@ -160,6 +164,7 @@ $(document).ready(function() {
 
     $("#differ").click(function(){
     	if($(this).prop("checked") == true){
+
     		hideDifference("intikegiatan");
     		hideDifference("kriteriailmu");
     		hideDifference("pendidikan");
@@ -167,25 +172,44 @@ $(document).ready(function() {
     		hideDifference("pendanaan");
     		hideDifference("luaran");
     	}
+    	else{
+    		$(".intikegiatan").parent().show();
+    		$(".kriteriailmu").parent().show();
+    		$(".pendidikan").parent().show();
+    		$(".anggota").parent().show();
+    		$(".pendanaan").parent().show();
+    		$(".luaran").parent().show();	
+    	}
     });
 
     function hideDifference(kelas){
-    	var el = document.getElementsByClassName(kelas);
-		// console.log(el[0].innerHTML);
-		var flag_inti = false;
-		console.log(el.length);
-		if(el[0].innerHTML == el[1].innerHTML && el[2].innerHTML == el[3].innerHTML){
-			flag_inti = true;
-		}
-		console.log("aku loop ke-"+i);
-		if(flag_inti == true){
-			for(var i=1;i<el.length;i++){
-				el[i].innerHTML = "Tidak ada perbedaan";
-			}
-		}
+
+    	var el = $("."+kelas);
+    	var count=0;
+    	var compare=new Array();
+    	for(var i=0;i<el.length;i++){
+    		if(el[i].innerHTML != ""){
+    			count++;
+    			compare[count-1] = el[i];
+    		}
+    	}
+    	if(count==2){
+    		if(compare[0].innerHTML == compare[1].innerHTML){
+    			$("."+kelas).parent().hide();
+    		}
+    	}
+    	else if(count==3){
+    		if(compare[0].innerHTML == compare[1].innerHTML && compare[1].innerHTML == compare[2].innerHTML){
+    			$("."+kelas).parent().hide();
+    		}
+    	}
+    	else if(count==4){
+    		if(compare[0].innerHTML == compare[1].innerHTML && compare[1].innerHTML == compare[2].innerHTML && compare[2].innerHTML == compare[3].innerHTML){
+    			$("."+kelas).parent().hide();
+    		}
+    	}
     }
 });
-
 </script>
 @endsection
 
