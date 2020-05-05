@@ -19,9 +19,9 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 		<tbody>
 		<tr>
 			<td>
-				<select class="selectpicker" id="criteria" data-size="5" title="Comparison Criteria" multiple>
+				<select multiple class="selectpicker" id="criteria" data-size="5" title="Comparison Criteria" >
 				@foreach($jenis_kriteria as $b)
-				<option value="{{$b->ID_JENIS_KRITERIA}}">{{$b->NAMA_JENIS}}</option>
+				<option value="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}" selected>{{$b->NAMA_JENIS}}</option>
 				@endforeach
 				</select><br>
 				<input type="checkbox" id="differ">Show Difference Only
@@ -29,7 +29,7 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 			<td>
 				<select class="selectpicker bidang" id="bidang1" data-size="5" title="Pilih Bidang PKM">
 				@foreach($bidang as $b)
-				<option value="{{$b->ID_BIDANG}}" onclick="select('bidang1',{{$b->ID_BIDANG}})">{{$b->NAMA_BIDANG}}</option>
+				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 				</select>
 			</td>
@@ -52,10 +52,10 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 		@foreach($jenis_kriteria as $b)
 		<tr>
 			<td>{{$b->NAMA_JENIS}}</td>
-			<td id="{{strtolower(trim($b->NAMA_JENIS))}}bidang1" class="{{strtolower(trim($b->NAMA_JENIS))}}"></td>
-			<td id="{{strtolower(trim($b->NAMA_JENIS))}}bidang2" class="{{strtolower(trim($b->NAMA_JENIS))}}"></td>
-			<td id="{{strtolower(trim($b->NAMA_JENIS))}}bidang3" class="{{strtolower(trim($b->NAMA_JENIS))}}"></td>
-			<td id="{{strtolower(trim($b->NAMA_JENIS))}}bidang4" class="{{strtolower(trim($b->NAMA_JENIS))}}"></td>
+			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang1" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
+			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang2" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
+			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang3" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
+			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang4" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
 		</tr>
 		@endforeach
 		<!-- <tr>
@@ -106,6 +106,7 @@ $(document).ready(function() {
         $(this).removeClass("active");
     });
     clickedItem.addClass("active");
+    // $('#criteria').selectpicker('selectAll');
 
     $(".bidang").change(function(){
     	console.log($(this).attr('id')+" "+$(this).val()+" clicked!");
@@ -142,19 +143,11 @@ $(document).ready(function() {
             success: function(data) {
 				var bidang = data.bidang;
 				$("#intikegiatan"+idselect).html(bidang[0]["URAIAN_KRITERIA"]);
-				$("#kriteriailmu"+idselect).html(bidang[1]["URAIAN_KRITERIA"]);
-				$("#pendidikan"+idselect).html(bidang[2]["URAIAN_KRITERIA"]);
-				$("#anggota"+idselect).html(bidang[3]["URAIAN_KRITERIA"]);
+				$("#kriteriakeilmuan"+idselect).html(bidang[1]["URAIAN_KRITERIA"]);
+				$("#tingkatpendidikan"+idselect).html(bidang[2]["URAIAN_KRITERIA"]);
+				$("#jumlahanggota"+idselect).html(bidang[3]["URAIAN_KRITERIA"]);
 				$("#pendanaan"+idselect).html(bidang[4]["URAIAN_KRITERIA"]);
 				$("#luaran"+idselect).html(bidang[5]["URAIAN_KRITERIA"]);
-				if($("#differ").prop("checked") == true){
-					hideDifference("intikegiatan");
-					hideDifference("kriteriailmu");
-					hideDifference("pendidikan");
-					hideDifference("anggota");
-					hideDifference("pendanaan");
-					hideDifference("luaran");
-				}
             },
             error: function(data) {
               // console.log(data);
@@ -163,24 +156,36 @@ $(document).ready(function() {
     });
 
     $("#differ").click(function(){
+    	var kelas = $("#criteria").val();
     	if($(this).prop("checked") == true){
-
-    		hideDifference("intikegiatan");
-    		hideDifference("kriteriailmu");
-    		hideDifference("pendidikan");
-    		hideDifference("anggota");
-    		hideDifference("pendanaan");
-    		hideDifference("luaran");
+    		for(var i=0;i<kelas.length;i++){
+    			hideDifference(kelas[i]);
+    		}
     	}
     	else{
-    		$(".intikegiatan").parent().show();
-    		$(".kriteriailmu").parent().show();
-    		$(".pendidikan").parent().show();
-    		$(".anggota").parent().show();
-    		$(".pendanaan").parent().show();
-    		$(".luaran").parent().show();	
+    		for(var i=0;i<kelas.length;i++){
+    			$("."+kelas[i]).parent().show();
+    		}
     	}
     });
+
+	$("#criteria").change(function(){
+		var options = $("#criteria option");
+		console.log(options);
+		var kelas = $("#criteria").val();
+		console.log(kelas);
+		for(var i=0;i<options.length;i++){
+			$("."+options[i].value).parent().hide();
+		}
+		for(var i=0;i<kelas.length;i++){
+			$("."+kelas[i]).parent().show();
+		}
+		if($("#differ").prop("checked") == true){
+    		for(var i=0;i<kelas.length;i++){
+    			hideDifference(kelas[i]);
+    		}
+    	}
+	})    
 
     function hideDifference(kelas){
 
