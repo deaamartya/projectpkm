@@ -37,9 +37,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="row m-0">
-			<div class="col-12" style="background-color: #2c4d86;">
-				
+		<div class="row m-0 py-1 justify-content-end" style="background-color: #2c4d86;">
+			<div class="col-2 align-self-center text-right">
+			<ul class="social-list">
+		    	<li class="li-youtube-play">
+		    		<a href="https://www.youtube.com/channel/UCxAYP6iE7pivhmQh-O_TJoQ" target="_balnk" data-toggle="tooltip" data-placement="top" title="" data-original-title="Youtube"><i class="fa fa-youtube-play"></i></a>
+		    	</li>
+		    	<li class="li-instagram">
+		    		<a href="https://www.instagram.com/pips.unair/" target="_balnk" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram">
+		    			<i class="fa fa-instagram"></i>
+		    		</a>
+		    	</li>
+		    	<li class="li-twitter">
+		    		<a href="https://twitter.com/PipsUnair" target="_balnk" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+		    			<i class="fa fa-twitter"></i>
+		    		</a>
+		    	</li>
+		    	<li class="li-facebook">
+		    		<a href="https://www.facebook.com/PipsUnair.Official" target="_balnk" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+		    			<i class="fa fa-facebook"></i>
+		    		</a>
+		    	</li>
+		    </ul>
 			</div>
 		</div>
 	</footer>

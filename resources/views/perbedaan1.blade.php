@@ -178,7 +178,6 @@ $(document).ready(function() {
 			flag_inti = true;
 		}
 		console.log("aku loop ke-"+i);
-
 		if(flag_inti == true){
 			for(var i=1;i<el.length;i++){
 				el[i].innerHTML = "Tidak ada perbedaan";

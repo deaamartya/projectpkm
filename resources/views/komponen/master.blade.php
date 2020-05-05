@@ -8,7 +8,7 @@
 		}
 		.navbar-nav{
 			font-family: Microsoft Sans Serif;
-			font-size: 11pt;
+			font-size: 14pt;
 		}
 		.navbar-dark .navbar-nav .nav-link {
 		    color: white !important;
@@ -20,14 +20,17 @@
 		}
 		.textinfo{
 			font-family: Microsoft Sans Serif;
-			font-size: 14pt;
+			font-size: 10pt;
 		}
+		@yield('addstyle')
 	</style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{asset('font/trajanfont.css')}}">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://genap2020.elearning.unair.ac.id/theme/mb2cg/assets/font-awesome/css/font-awesome.min.css">
+	@yield('headlink')
 </head>
 <body>
 	<div class="container">
@@ -46,29 +49,32 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="container px-0">
+		<div class="container px-0" style="max-width: 100%;">
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		    <ul class="navbar-nav mx-auto">
-		      <li class="nav-item active p-1 py-2 home">
+		      <li class="nav-item active px-2 py-3 home">
 		        <a class="nav-link" href="{{url('/home')}}">Home <span class="sr-only">(current)</span></a>
 		      </li>
-		      <li class="nav-item p-1 py-2 sejarah">
+		      <li class="nav-item px-2 py-3 sejarah">
 		        <a class="nav-link" href="{{url('/sejarah-pkm')}}">Sejarah PKM</a>
 		      </li>
-		      <li class="nav-item p-1 py-2 tujuan">
+		      <li class="nav-item px-2 py-3 tujuan">
 		        <a class="nav-link " href="{{url('/tujuan-pkm')}}">Tujuan PKM</a>
 		      </li>
-		      <li class="nav-item p-1 py-2 karakteristik">
+		      <li class="nav-item px-2 py-3 karakteristik">
 		        <a class="nav-link" href="{{url('/karakteristik-umum')}}">Karakteristik Umum</a>
 		      </li>
-		      <li class="nav-item p-1 py-2 kriteria">
+		      <li class="nav-item px-2 py-3 kriteria">
 		        <a class="nav-link" href="{{url('/kriteria-bidang')}}">Kriteria Bidang PKM</a>
 		      </li>
-		      <li class="nav-item p-1 py-2 tatacara">
+		      <li class="nav-item px-2 py-3 tatacara">
 		        <a class="nav-link " href="{{url('/tata-cara')}}">Tata Cara Penulisan</a>
 		      </li>
-		      <li class="nav-item p-1 py-2 aspek">
+		      <li class="nav-item px-2 py-3 aspek">
 		        <a class="nav-link " href="{{url('/aspek-penilaian')}}">Aspek Penilaian</a>
+		      </li>
+		      <li class="nav-item px-2 py-3 perbandingan">
+		        <a class="nav-link " href="{{url('/perbedaan-bidang')}}">Perbandingan Bidang</a>
 		      </li>
 		    </ul>
 		  </div>

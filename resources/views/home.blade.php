@@ -1,4 +1,4 @@
-@extends('master')
+@extends('komponen/master')
 
 @section('konten')
 <!-- Masukin kontennya disini. -->
