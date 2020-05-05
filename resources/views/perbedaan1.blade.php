@@ -9,16 +9,49 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 .btn-light {
     color: white !important;
     background-color: #2c4d86 !important;
-    border-color: #f8f9fa;
+    border:0px;
 }
 @endsection
 
 @section('konten')
-<div class="row" style="background-color: white;min-height: 1000px;">
-	<table class="table table-bordered">
+<div class="row" style="background-color: white;">
+	<table class="table" id="milihAwal">
 		<tbody>
 		<tr>
 			<td>
+				<select class="selectpicker bidangawal" id="abidang1" data-size="5" title="Pilih Bidang PKM">
+				@foreach($bidang as $b)
+				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+				@endforeach
+				</select>
+			</td>
+			<td><select class="selectpicker bidangawal" id="abidang2" data-size="5" title="Pilih Bidang PKM">
+				@foreach($bidang as $b)
+				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+				@endforeach
+			</select></td>
+			<td><select class="selectpicker bidangawal" id="abidang3" data-size="5" title="Pilih Bidang PKM">
+				@foreach($bidang as $b)
+				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+				@endforeach
+			</select></td>
+			<td><select class="selectpicker bidangawal" id="abidang4" data-size="5" title="Pilih Bidang PKM">
+				@foreach($bidang as $b)
+				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+				@endforeach
+			</select></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="row">
+	<button type="button" class="btn btn-light" id="comparebtn">COMPARE</button>
+</div>
+<div class="row" style="background-color: white;">
+	<table class="table table-bordered" id="comparingTable">
+		<tbody>
+		<tr>
+			<td id="comparison">
 				<select multiple class="selectpicker" id="criteria" data-size="5" title="Comparison Criteria" >
 				@foreach($jenis_kriteria as $b)
 				<option value="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}" selected>{{$b->NAMA_JENIS}}</option>
@@ -50,7 +83,7 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 			</select></td>
 		</tr>
 		@foreach($jenis_kriteria as $b)
-		<tr>
+		<tr class="rowdata">
 			<td>{{$b->NAMA_JENIS}}</td>
 			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang1" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
 			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang2" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
@@ -58,8 +91,9 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang4" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
 		</tr>
 		@endforeach
-	</tbody>
+		</tbody>
 	</table>
+	
 </div>
 @endsection
 
@@ -71,6 +105,56 @@ $(document).ready(function() {
         $(this).removeClass("active");
     });
     clickedItem.addClass("active");
+    $("#comparingTable").hide();
+
+    $(".bidangawal").change(function(){
+    	var idselect = $(this).attr('id');
+    	var val = $(this).val();
+    	var select1 = $("#abidang1").val();
+    	var select2 = $("#abidang2").val();
+    	var select3 = $("#abidang3").val();
+    	var select4 = $("#abidang4").val();
+    	$(".bidangawal").each(function(){
+			$(this).find("option:disabled").prop("disabled",false);
+			if(select1 != ""){
+				$(this).find('[value='+select1+']').prop('disabled', true);
+				$("#abidang1").find('[value='+select1+']').prop('disabled', false);
+			}
+			if(select2 != ""){
+				$(this).find('[value='+select2+']').prop('disabled', true);
+				$("#abidang2").find('[value='+select2+']').prop('disabled', false);
+			}
+			if(select3 != ""){
+				$(this).find('[value='+select3+']').prop('disabled', true);
+				$("#abidang3").find('[value='+select3+']').prop('disabled', false);
+			}
+			if(select4 != ""){
+				$(this).find('[value='+select4+']').prop('disabled', true);
+				$("#abidang4").find('[value='+select4+']').prop('disabled', false);
+			}
+    	});
+    	$('.bidangawal').selectpicker('refresh');
+    });
+
+    $("#comparebtn").click(function(){
+    	if($("#abidang1").val() != ""){
+    		$('#bidang1').selectpicker('val',$("#abidang1").val());
+    	}
+    	if($("#abidang2").val() != ""){
+    		$('#bidang2').selectpicker('val',$("#abidang2").val());
+    	}
+    	if($("#abidang3").val() != ""){
+    		$('#bidang3').selectpicker('val',$("#abidang3").val());
+    	}
+    	if($("#abidang4").val() != ""){
+    		$('#bidang4').selectpicker('val',$("#abidang4").val());
+    	}
+    	$('.bidang').selectpicker('refresh');
+    	$('.bidang').trigger('change');
+    	$("#comparingTable").show();
+    	$("#comparebtn").hide();
+    	$("#milihAwal").hide();
+    })
 
     $(".bidang").change(function(){
     	console.log($(this).attr('id')+" "+$(this).val()+" clicked!");
