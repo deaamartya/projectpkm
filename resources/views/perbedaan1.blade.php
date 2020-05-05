@@ -183,6 +183,7 @@ $(document).ready(function() {
     });
 
     function hideDifference(kelas){
+
     	var el = $("."+kelas);
     	var count=0;
     	var compare=new Array();
@@ -207,7 +208,6 @@ $(document).ready(function() {
     			$("."+kelas).parent().hide();
     		}
     	}
-    	
     }
 });
 </script>
