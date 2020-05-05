@@ -14,6 +14,7 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 @endsection
 
 @section('konten')
+
 <div class="row" style="background-color: white;">
 	<table class="table" id="milihAwal">
 		<tbody>
