@@ -35,11 +35,12 @@ class PageController extends Controller
     }
     public function perbandingan(){
         $bidang = DB::table('bidang')->get();
-        return view('perbedaan1',['bidang' => $bidang]);
+        $jenis_kriteria = DB::table('jenis_kriteria')->get();
+        return view('perbedaan1',['bidang' => $bidang,'jenis_kriteria' => $jenis_kriteria]);
     }
     public function getData($id){
         $bidang=DB::table('bidang')
-        ->select('NAMA_BIDANG','NAMA_JENIS', 'URAIAN_KRITERIA')
+        ->select('NAMA_BIDANG','NAMA_JENIS', DB::raw("COALESCE(URAIAN_KRITERIA,'Tidak ada') as URAIAN_KRITERIA"))
         ->join('detil_kriteria','detil_kriteria.ID_BIDANG','=','bidang.ID_BIDANG')
         ->join('jenis_kriteria','jenis_kriteria.ID_JENIS_KRITERIA','=','detil_kriteria.ID_JENIS_KRITERIA')
         ->where('bidang.ID_BIDANG','=',$id)->get();
