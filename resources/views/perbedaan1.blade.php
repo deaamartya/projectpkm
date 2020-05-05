@@ -99,6 +99,7 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 @endsection
 
 @section('script')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	var clickedItem = $(".perbandingan");
@@ -138,23 +139,40 @@ $(document).ready(function() {
     });
 
     $("#comparebtn").click(function(){
+    	var changes = 0;
     	if($("#abidang1").val() != ""){
     		$('#bidang1').selectpicker('val',$("#abidang1").val());
+    		changes++;
     	}
     	if($("#abidang2").val() != ""){
     		$('#bidang2').selectpicker('val',$("#abidang2").val());
+    		changes++;
     	}
     	if($("#abidang3").val() != ""){
     		$('#bidang3').selectpicker('val',$("#abidang3").val());
+    		changes++;
     	}
     	if($("#abidang4").val() != ""){
     		$('#bidang4').selectpicker('val',$("#abidang4").val());
+    		changes++;
     	}
-    	$('.bidang').selectpicker('refresh');
-    	$('.bidang').trigger('change');
-    	$("#comparingTable").show();
-    	$("#comparebtn").hide();
-    	$("#milihAwal").hide();
+    	if(changes>1){
+    		$('.bidang').selectpicker('refresh');
+	    	$('.bidang').trigger('change');
+	    	$("#comparingTable").show();
+	    	$("#comparebtn").hide();
+	    	$("#milihAwal").hide();
+    	}
+    	else{
+    		Swal.fire({
+			  position: 'center',
+			  icon: 'error',
+			  title: 'Pilih minimal 2 bidang PKM!',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+    	}
+    	
     })
 
     $(".bidang").change(function(){
