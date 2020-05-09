@@ -14,9 +14,9 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 @endsection
 
 @section('konten')
-
 <div class="row" style="background-color: white;">
-	<table class="table" id="milihAwal">
+	<div class="col-12">
+	<table class="table" id="milihAwal" width="100%">
 		<tbody>
 		<tr>
 			<td>
@@ -45,11 +45,12 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 	</tbody>
 </table>
 </div>
+</div>
 <div class="row">
 	<button type="button" class="btn btn-light" id="comparebtn">COMPARE</button>
 </div>
 <div class="row" style="background-color: white;">
-	<table class="table table-bordered" id="comparingTable">
+	<table class="table table-bordered" id="comparingTable" width="100%">
 		<tbody>
 		<tr>
 			<td id="comparison">
@@ -108,6 +109,9 @@ $(document).ready(function() {
     });
     clickedItem.addClass("active");
     $("#comparingTable").hide();
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+	  $('.selectpicker').selectpicker('mobile');
+	}
 
     $(".bidangawal").change(function(){
     	var idselect = $(this).attr('id');
