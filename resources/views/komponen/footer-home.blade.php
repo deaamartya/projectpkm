@@ -25,7 +25,7 @@
 					  <div class="form-group">
 					  	<textarea class="form-control" placeholder="Your Message" name="message" required></textarea>
 					  </div>
-					<button type="submit" class="float-right btn btn-primary text-right btn-submit">Submit</button>
+					<button type="submit" class="float-right btn btn-dark text-right btn-submit" style="background-color: black">Submit</button>
 					</form>
 				</div>
 				<div class="col-md-4 col-lg-4 py-4 px-4 align-middle">
@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="row m-0 py-1 justify-content-end" style="background-color: #2c4d86;">
-			<div class="col-2 align-self-center text-right">
+			<div class="col-12 align-self-center text-right">
 				<div class="container" style="font-size: 20pt;">
 					<a class="m-1" style="display: inline-block;" title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCUYwloXmWyNZplsqg4MVERw">
 				        <i class="fab fa-youtube" style="color: white"></i>
