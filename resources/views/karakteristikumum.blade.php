@@ -7,7 +7,7 @@ array('judulkonten' => "Karakteristik Umum PKM"))
 
 @section('konten')
 <div class="row" style="background-color: white">
-	hello
+	@include('/komponen/layout-konten')
 </div>
 @endsection
 
