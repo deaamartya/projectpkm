@@ -1,4 +1,4 @@
-@extends('komponen/master')
+@extends('komponen/layout-konten')
 
 @section('diataskonten')
 @include('/komponen/judulkonten', 
@@ -14,9 +14,9 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 @endsection
 
 @section('konten')
-<div class="row" style="background-color: white;">
-	<div class="col-12">
-	<table class="table" id="milihAwal" width="100%">
+<div class="row" style="min-height: 300px;" id="milihAwal">
+	<div class="col-12 table-responsive">
+	<table class="table" width="50%">
 		<tbody>
 		<tr>
 			<td>
@@ -49,8 +49,8 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 <div class="row">
 	<button type="button" class="btn btn-light" id="comparebtn">COMPARE</button>
 </div>
-<div class="row" style="background-color: white;">
-	<table class="table table-bordered" id="comparingTable" width="100%">
+<div class="row table-responsive">
+	<table class="table table-bordered" id="comparingTable">
 		<tbody>
 		<tr>
 			<td id="comparison">
