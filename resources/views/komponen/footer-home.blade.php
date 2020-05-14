@@ -9,7 +9,7 @@
 		</div>
 		<div class="row p-0 m-0">
 			<div class="col-12 row align-items-center m-0"style="background-color: #3c3c3c;padding: 40px 40px 125px 80px;">
-				<div class="col-md-8 col-lg-8">
+				<div class="col-xl-8">
 					<form id="sendmail">
 					  <div class="form-row">
 					    <div class="form-group col-md-6">
@@ -28,7 +28,7 @@
 					<button type="submit" class="float-right btn btn-dark text-right btn-submit" style="background-color: black">Submit</button>
 					</form>
 				</div>
-				<div class="col-md-4 col-lg-4 py-4 px-4 align-middle">
+				<div class="col-xl-4 py-4 px-4 align-middle">
 					<span class="text-white align-middle textinfo"><b>UNAIR Information and Public Relations Center</b><br>
 					<br>Management Office, 2nd Floor Amerta-2
 					<br>Kampus C Mulyorejo, Surabaya

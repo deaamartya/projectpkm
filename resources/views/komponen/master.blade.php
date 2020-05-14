@@ -8,7 +8,7 @@
 		}
 		.navbar-nav{
 			font-family: Microsoft Sans Serif;
-			font-size: 14pt;
+			font-size: 1rem;
 		}
 		.navbar-dark .navbar-nav .nav-link {
 		    color: white !important;
@@ -21,7 +21,7 @@
 		}
 		.textinfo{
 			font-family: Microsoft Sans Serif;
-			font-size: 10pt;
+			font-size: 1rem;
 		}
 		.shadow {
 			box-shadow: 0px 10px 6px 1px rgba(0, 0, 0, 0.1), 0px 10px 5px 0px rgba(0, 0, 0, 0), 0px 1px 5px 12px rgba(0, 0, 0, 0);

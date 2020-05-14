@@ -58,7 +58,7 @@ class PageController extends Controller
              ), function($message) use ($request)
                {
                   $message->from($request->email);
-                  $message->to('deaamartya3@gmail.com');
+                  $message->to('ilpresvokasi@gmail.com');
                });
     }
 }
