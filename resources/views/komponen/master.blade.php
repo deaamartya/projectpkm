@@ -12,6 +12,7 @@
 		}
 		.navbar-dark .navbar-nav .nav-link {
 		    color: white !important;
+		    font-size: 1rem;
 		}
 		.footertext{
 			font-family: Tahoma;
@@ -22,6 +23,13 @@
 			font-family: Microsoft Sans Serif;
 			font-size: 10pt;
 		}
+		.shadow {
+			box-shadow: 0px 10px 6px 1px rgba(0, 0, 0, 0.1), 0px 10px 5px 0px rgba(0, 0, 0, 0), 0px 1px 5px 12px rgba(0, 0, 0, 0);
+		}
+		body{
+			font-size: 1rem;
+		}
+		
 		@yield('master-addstyle')
 	</style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -33,27 +41,27 @@
 	@yield('master-headlink')
 </head>
 <body>
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-sm-12 col-md-5 col-sm-5">
-				<a class="px-2" href="{{url('/home')}}"><img class="img-fluid" src="{{asset('/img/logo-unair.png')}}" width="90%" style="max-height: 140px; max-width: 420px;"></a>
+	<div class="container-fluid p-0 m-0">
+		<div class="row align-items-center mb-4 mx-0">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+				<a class="px-2" href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-unair.png')}}" width="90%" style="max-width: 80%;"></a>
 			</div>
-			<div class="col-sm-12 col-md-3 col-sm-3 offset-md-3">
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-5 text-center">
+				<form class="form-inline">
+					<input class="form-control" type="search" placeholder="Search" style="width: 80%">
 				</form>
 			</div>
 		</div>
-	</div>
-	<nav class="navbar navbar-expand-lg navbar-dark py-0 px-0" style="background-color: #2c4d86; width: 100%;">
+	<div class="row m-0 p-0">
+	<nav class="navbar navbar-expand-lg navbar-dark py-0 px-0 m-0" style="background-color: #2c4d86; width: 100%;">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="container px-0" style="max-width: 100%;">
+		<div class="container-fluid px-0" style="max-width: 100%;">
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		    <ul class="navbar-nav mx-auto">
 		      <li class="nav-item active px-2 py-3 home">
-		        <a class="nav-link" href="{{url('/home')}}">Home <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item px-2 py-3 sejarah">
 		        <a class="nav-link" href="{{url('/sejarah-pkm')}}">Sejarah PKM</a>
@@ -80,11 +88,14 @@
 		  </div>
 		</div>
 	</nav>
+	</div>
+	</div>
+	<div class="container-fluid p-0 m-0" style="min-height: 1200px;">
 	@yield('master-diataskonten')
-	<div class="container" style="max-width: 100%;">
-		@yield('master-konten')
+	@yield('master-konten')
 	</div>
 	@yield('master-footer')
-</body>
 @yield('master-script')
+</body>
+
 </html>

@@ -1,14 +1,14 @@
 @extends('komponen/master')
 
-@section('headlink')
+@section('master-headlink')
 <meta name="csrf-token" content="{{ csrf_token() }}"/>
 @endsection
 
-@section('konten')
+@section('master-konten')
 <!-- Masukin kontennya disini. -->
 @endsection
 
-@section('script')
+@section('master-script')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -49,6 +49,6 @@ $(document).ready(function() {
 </script>
 @endsection
 
-@section('footer')
+@section('master-footer')
 @include('/komponen/footer-home')
 @endsection

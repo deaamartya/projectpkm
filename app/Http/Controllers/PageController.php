@@ -37,7 +37,7 @@ class PageController extends Controller
     public function perbandingan(){
         $bidang = DB::table('bidang')->get();
         $jenis_kriteria = DB::table('jenis_kriteria')->get();
-        return view('perbedaan1',['bidang' => $bidang,'jenis_kriteria' => $jenis_kriteria]);
+        return view('perbedaan',['bidang' => $bidang,'jenis_kriteria' => $jenis_kriteria]);
     }
     public function getData($id){
         $bidang=DB::table('bidang')

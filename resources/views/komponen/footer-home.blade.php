@@ -1,4 +1,4 @@
-	<footer>
+	<footer class="footer">
 		<div class="row p-0 m-0">
 			<div class="col-md-8 col-lg-8 py-4" style="background-color: #2c4d86;">
 				<h3 class="text-center text-white footertext">Sudah menentukan PKM Anda?</h3>

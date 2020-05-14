@@ -1,4 +1,4 @@
-@extends('komponen/layout-konten')
+@extends('komponen/layout-konten-normal')
 
 @section('diataskonten')
 @include('/komponen/judulkonten', 
@@ -9,76 +9,98 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 .btn-light {
     color: white !important;
     background-color: #2c4d86 !important;
-    border:0px;
+    border:0px !important;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 0px !important;
+}
+.table-bordered {
+    border: 1px solid #dee2e6 !important;
+}
+.bootstrap-select{
+	width:100%;
+}
+.rowdata td{
+	word-break:break-word;;
 }
 @endsection
 
 @section('konten')
-<div class="row" style="min-height: 300px;" id="milihAwal">
-	<div class="col-12 table-responsive">
-	<table class="table" width="50%">
-		<tbody>
-		<tr>
-			<td>
-				<select class="selectpicker bidangawal" id="abidang1" data-size="5" title="Pilih Bidang PKM">
-				@foreach($bidang as $b)
-				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
-				@endforeach
-				</select>
-			</td>
-			<td><select class="selectpicker bidangawal" id="abidang2" data-size="5" title="Pilih Bidang PKM">
-				@foreach($bidang as $b)
-				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
-				@endforeach
-			</select></td>
-			<td><select class="selectpicker bidangawal" id="abidang3" data-size="5" title="Pilih Bidang PKM">
-				@foreach($bidang as $b)
-				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
-				@endforeach
-			</select></td>
-			<td><select class="selectpicker bidangawal" id="abidang4" data-size="5" title="Pilih Bidang PKM">
-				@foreach($bidang as $b)
-				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
-				@endforeach
-			</select></td>
-		</tr>
-	</tbody>
-</table>
+<div class="row px-3 pb-3" id="milihAwal">
+	<div class="col-12">
+		<div class="card shadow mb-5 p-3">
+		<div class="card-body p-2">
+			<div class="row">
+				<table class="table" width="100%">
+					<tbody>
+						<tr>
+							<td>
+								<select class="selectpicker bidangawal" id="abidang1" data-size="5" title="Pilih Bidang PKM" data-width="100%">
+								@foreach($bidang as $b)
+								<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+								@endforeach
+								</select>
+							</td>
+							<td><select class="selectpicker bidangawal" id="abidang2" data-size="5" title="Pilih Bidang PKM" data-width="100%">
+								@foreach($bidang as $b)
+								<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+								@endforeach
+							</select></td>
+							<td><select class="selectpicker bidangawal" id="abidang3" data-size="5" title="Pilih Bidang PKM" data-width="100%">
+								@foreach($bidang as $b)
+								<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+								@endforeach
+							</select></td>
+							<td><select class="selectpicker bidangawal" id="abidang4" data-size="5" title="Pilih Bidang PKM" data-width="100%">
+								@foreach($bidang as $b)
+								<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
+								@endforeach
+							</select></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row">
+				<button type="button" class="btn btn-lg btn-light ml-2" id="comparebtn">COMPARE</button>
+			</div>
+		</div>
+	</div>
 </div>
 </div>
-<div class="row">
-	<button type="button" class="btn btn-light" id="comparebtn">COMPARE</button>
-</div>
-<div class="row table-responsive">
-	<table class="table table-bordered" id="comparingTable">
+<div class="row px-3" id="comparingTable">
+	<div class="col-12 card p-3">
+	<div class="card-body table-responsive p-2">
+	<table class="table table-bordered" id="comparing">
 		<tbody>
 		<tr>
 			<td id="comparison">
-				<select multiple class="selectpicker" id="criteria" data-size="5" title="Comparison Criteria" >
+				<select multiple class="selectpicker" id="criteria" data-size="5" data-title="Comparison Criteria" data-width="100%">
 				@foreach($jenis_kriteria as $b)
 				<option value="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}" selected>{{$b->NAMA_JENIS}}</option>
 				@endforeach
 				</select><br>
-				<input type="checkbox" id="differ">Show Difference Only
+				<input type="checkbox" id="differ" class="mr-2"><span id="differtext" style="cursor: pointer;">Show Difference Only</span>
 			</td>
 			<td>
-				<select class="selectpicker bidang" id="bidang1" data-size="5" title="Pilih Bidang PKM">
+				<select class="selectpicker bidang" id="bidang1" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 				</select>
 			</td>
-			<td><select class="selectpicker bidang" id="bidang2" data-size="5" title="Pilih Bidang PKM">
+			<td><select class="selectpicker bidang" id="bidang2" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 			</select></td>
-			<td><select class="selectpicker bidang" id="bidang3" data-size="5" title="Pilih Bidang PKM">
+			<td><select class="selectpicker bidang" id="bidang3" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 			</select></td>
-			<td><select class="selectpicker bidang" id="bidang4" data-size="5" title="Pilih Bidang PKM">
+			<td><select class="selectpicker bidang" id="bidang4" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
@@ -95,7 +117,8 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 		@endforeach
 		</tbody>
 	</table>
-	
+	</div>
+</div>
 </div>
 @endsection
 
@@ -112,6 +135,23 @@ $(document).ready(function() {
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 	  $('.selectpicker').selectpicker('mobile');
 	}
+
+	$("#differtext").click(function(){
+		var kelas = $("#criteria").val();
+    	if($("#differ").prop("checked") == true){
+    		$("#differ").prop("checked",false);
+    		for(var i=0;i<kelas.length;i++){
+    			$("."+kelas[i]).parent().show();
+    		}
+    	}
+    	else{
+    		$("#differ").prop("checked",true);
+    		for(var i=0;i<kelas.length;i++){
+    			hideDifference(kelas[i]);
+    		}
+    		
+    	}
+	});
 
     $(".bidangawal").change(function(){
     	var idselect = $(this).attr('id');

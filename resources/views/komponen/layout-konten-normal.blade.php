@@ -1,7 +1,16 @@
-<div class="container">
-<div class="row">
+@extends('komponen/master')
+
+@section('master-diataskonten')
+@yield('diataskonten')
+@endsection
+
+@section('master-addstyle')
+@yield('addstyle')
+@endsection
+@section('master-konten')
+<div class="row p-0 m-0">
   <div class="card1 col-xs-6 col-sm-8 col-md-12 col-lg-12 col-xl-12" style="margin-top:-5rem;margin-bottom:70px;">
-    <div class="card-header "> 
+    <div class="card-header"> 
       <ul class="nav nav-tabs card-header-tabs">
         <div class="row nav-item" style="background-color:white;margin-left:1px">
           <a class="m-1" style="display: inline-block;" title="Twitter" target="_blank" href="https://twitter.com/Unair_Official">
@@ -23,7 +32,9 @@
         </div>
       </ul>
     </div>
-    <div class="card-body" style="background-color: white; margin-left=5rem">
+    <div class="card-body" style="background-color: white;"> 
+      <!-- tambahin class "shadow setelah card-body han" -->
+      @yield('konten')
     <p>isi content adkajkjd ajdiakjd jadi ini subjec percobaan dan janga lupa untuk
     slalu mejaga kesehatan kita walupun sehat tetapi harus.
     </p>
@@ -35,4 +46,17 @@
     </p>
     </div>
   </div>
-  </div>
+</div>
+@endsection
+
+@section('master-script')
+@yield('script')
+@endsection
+
+@section('master-footer')
+@yield('footer')
+@endsection
+
+@section('master-headlink')
+@yield('headlink')
+@endsection
