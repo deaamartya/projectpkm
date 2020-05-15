@@ -1,4 +1,4 @@
-@extends('komponen/master')
+@extends('komponen/layout-konten')
 
 @section('diataskonten')
 @include('/komponen/judulkonten', 
@@ -14,7 +14,7 @@ array('judulkonten' => "Tujuan PKM"))
 @section('script')
 <script type="text/javascript">
 $(document).ready(function() {
-    var clickedItem = $(".tujuan");
+    var clickedItem = $(".tentang");
     $(".nav-item").each( function() {
         $(this).removeClass("active");
     });

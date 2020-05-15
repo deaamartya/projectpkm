@@ -1,4 +1,4 @@
-@extends('komponen/master')
+@extends('komponen/layout-konten')
 
 @section('diataskonten')
 @include('/komponen/judulkonten', 

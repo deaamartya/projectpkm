@@ -11,9 +11,13 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
     background-color: #2c4d86 !important;
     border:0px !important;
 }
+#comparison > .btn-light {
+    color: black !important;
+    border:0px !important;
+}
 .table td, .table th {
     padding: .75rem;
-    vertical-align: top;
+    vertical-align: middle !important;
     border-top: 0px !important;
 }
 .table-bordered {
@@ -24,6 +28,19 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 }
 .rowdata td{
 	word-break:break-word;;
+}
+#container {
+    width: 80%;
+    padding: 5px 0px 15px 0px;
+    overflow: visible;
+    position: relative;
+}
+#x {
+    position: absolute;
+    color: white;
+    top: 0px;
+    right: -10px;
+    z-index: 100;
 }
 @endsection
 
@@ -70,37 +87,41 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 </div>
 </div>
 <div class="row px-3" id="comparingTable">
-	<div class="col-12 card p-3">
+	<div class="col-12 card p-3" style="min-height: 500px;">
 	<div class="card-body table-responsive p-2">
 	<table class="table table-bordered" id="comparing">
 		<tbody>
 		<tr>
-			<td id="comparison">
-				<select multiple class="selectpicker" id="criteria" data-size="5" data-title="Comparison Criteria" data-width="100%">
+			<td id="comparison" valign="middle">
+				<select multiple class="selectpicker mb-2" id="criteria" data-size="8" data-title="Comparison Criteria" data-width="100%" data-selected-text-format="static" data-style="color: black !important;border:0px !important;">
 				@foreach($jenis_kriteria as $b)
 				<option value="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}" selected>{{$b->NAMA_JENIS}}</option>
 				@endforeach
 				</select><br>
 				<input type="checkbox" id="differ" class="mr-2"><span id="differtext" style="cursor: pointer;">Show Difference Only</span>
 			</td>
-			<td>
+			<td valign="middle">
 				<select class="selectpicker bidang" id="bidang1" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
 				</select>
 			</td>
-			<td><select class="selectpicker bidang" id="bidang2" data-size="5" title="Pilih Bidang PKM" data-width="100%">
+			<td valign="middle">
+				<select class="selectpicker bidang" id="bidang2" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
-			</select></td>
-			<td><select class="selectpicker bidang" id="bidang3" data-size="5" title="Pilih Bidang PKM" data-width="100%">
+				</select>
+			</td>
+			<td valign="middle">
+				<select class="selectpicker bidang" id="bidang3" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
-			</select></td>
-			<td><select class="selectpicker bidang" id="bidang4" data-size="5" title="Pilih Bidang PKM" data-width="100%">
+				</select>
+			</td>
+			<td valign="middle"><select class="selectpicker bidang" id="bidang4" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
@@ -115,6 +136,14 @@ array('judulkonten' => "Perbedaan Bidang PKM"))
 			<td id="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}bidang4" class="{{strtolower(str_replace(' ','',$b->NAMA_JENIS))}}"></td>
 		</tr>
 		@endforeach
+		<tr>
+			<td>Template PKM</td>
+			<td id="templatebidang1" class="template"></td>
+			<td id="templatebidang2" class="template"></td>
+			<td id="templatebidang3" class="template"></td>
+			<td id="templatebidang4" class="template"></td>
+
+		</tr>
 		</tbody>
 	</table>
 	</div>
@@ -257,6 +286,8 @@ $(document).ready(function() {
 				for(var i=0;i<options.length;i++){
 					$("#"+options[i].value+idselect).html(bidang[i]["URAIAN_KRITERIA"]);
 				}
+				console.log(data.template);
+				$("#template"+idselect).html('<a href="'+data.template["TEMPLATE"]+'">'+data.template["TEMPLATE"]+'</a>')
 			},
             error: function(data) {
               // console.log(data);
