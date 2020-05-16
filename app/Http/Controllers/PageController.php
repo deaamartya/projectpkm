@@ -29,7 +29,9 @@ class PageController extends Controller
     	return view('kriteriabidang');
     }
     public function tatacara(){
-    	return view('tatacara');
+        $tatacara = DB::table('tata_cara')->get();
+        $wa = DB::table('contact_person')->where('ID_CP',1)->get();
+    	return view('tatacara',['tatacara' =>$tatacara,'wa' =>$wa]);
     }
     public function aspekpenilaian(){
     	return view('aspekpenilaian');
