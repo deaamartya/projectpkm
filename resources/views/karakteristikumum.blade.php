@@ -1,4 +1,4 @@
-@extends('komponen/master')
+@extends('komponen/layout-konten')
 
 @section('diataskonten')
 @include('/komponen/judulkonten', 
@@ -7,14 +7,14 @@ array('judulkonten' => "Karakteristik Umum PKM"))
 
 @section('konten')
 <div class="row" style="background-color: white">
-	@include('/komponen/layout-konten')
+	
 </div>
 @endsection
 
 @section('script')
 <script type="text/javascript">
 $(document).ready(function() {
-    var clickedItem = $(".karakteristik");
+    var clickedItem = $(".tentang");
     $(".nav-item").each( function() {
         $(this).removeClass("active");
     });

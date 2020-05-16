@@ -19,10 +19,10 @@
         </div>
 	</div>
 	<div class="row m-0" style="background-color: #3c3c3c;">
-		<div class="col-8 py-4 px-4 textinfo text-white">
+		<div class="col-xl-8 py-4 px-4 textinfo text-white">
 			Copyright 2020. Universitas Airlangga. All Rights Reserved.
 		</div>
-		<div class="col-md-4 col-lg-4 py-4 px-4 align-middle">
+		<div class="col-xl-4 py-4 px-4 align-middle">
 			<span class="text-white align-middle textinfo"><b>UNAIR Information and Public Relations Center</b><br>
 			<br>Management Office, 2nd Floor Amerta-2
 			<br>Kampus C Mulyorejo, Surabaya

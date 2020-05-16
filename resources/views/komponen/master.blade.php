@@ -7,8 +7,8 @@
 			background-color: #007ea8;
 		}
 		.navbar-nav{
-			font-family: Microsoft Sans Serif;
-			font-size: 14pt;
+			font-family: Open Sans;
+			font-size: 1rem;
 		}
 		.navbar-dark .navbar-nav .nav-link {
 		    color: white !important;
@@ -20,8 +20,8 @@
 			font-weight: 600;
 		}
 		.textinfo{
-			font-family: Microsoft Sans Serif;
-			font-size: 10pt;
+			font-family: Open Sans;
+			font-size: 1rem;
 		}
 		.shadow {
 			box-shadow: 0px 10px 6px 1px rgba(0, 0, 0, 0.1), 0px 10px 5px 0px rgba(0, 0, 0, 0), 0px 1px 5px 12px rgba(0, 0, 0, 0);
@@ -43,10 +43,13 @@
 <body>
 	<div class="container-fluid p-0 m-0">
 		<div class="row align-items-center mb-4 mx-0">
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
-				<a class="px-2" href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-unair.png')}}" width="90%" style="max-width: 80%;"></a>
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 text-center">
+				<div class="row">
+					<a class="px-2 col-xl-7" href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-unair.png')}}"></a>
+					<span class="col-sm-12 col-md-12 col-lg-12 col-xl-5">Panduan PKM Fakultas Vokasi</span>
+				</div>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-5 text-center">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-2 text-center">
 				<form class="form-inline">
 					<input class="form-control" type="search" placeholder="Search" style="width: 80%">
 				</form>
@@ -63,14 +66,15 @@
 		      <li class="nav-item active px-2 py-3 home">
 		        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
 		      </li>
-		      <li class="nav-item px-2 py-3 sejarah">
-		        <a class="nav-link" href="{{url('/sejarah-pkm')}}">Sejarah PKM</a>
-		      </li>
-		      <li class="nav-item px-2 py-3 tujuan">
-		        <a class="nav-link " href="{{url('/tujuan-pkm')}}">Tujuan PKM</a>
-		      </li>
-		      <li class="nav-item px-2 py-3 karakteristik">
-		        <a class="nav-link" href="{{url('/karakteristik-umum')}}">Karakteristik Umum</a>
+		      <li class="nav-item dropdown px-2 py-3 tentang">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Tentang PKM
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		          <a class="dropdown-item sejarah" href="{{url('/sejarah-pkm')}}">Sejarah PKM</a>
+		          <a class="dropdown-item tujuan" href="{{url('/tujuan-pkm')}}">Tujuan PKM</a>
+		          <a class="dropdown-item karakteristik" href="{{url('/karakteristik-umum')}}">Karakteristik Umum</a>
+		        </div>
 		      </li>
 		      <li class="nav-item px-2 py-3 kriteria">
 		        <a class="nav-link" href="{{url('/kriteria-bidang')}}">Kriteria Bidang PKM</a>

@@ -41,11 +41,12 @@ class PageController extends Controller
     }
     public function getData($id){
         $bidang=DB::table('bidang')
-        ->select('NAMA_BIDANG','NAMA_JENIS', DB::raw("COALESCE(URAIAN_KRITERIA,'Tidak ada') as URAIAN_KRITERIA"))
+        ->select('NAMA_BIDANG','NAMA_JENIS','TEMPLATE', DB::raw("COALESCE(URAIAN_KRITERIA,'Tidak ada') as URAIAN_KRITERIA"))
         ->join('detil_kriteria','detil_kriteria.ID_BIDANG','=','bidang.ID_BIDANG')
         ->join('jenis_kriteria','jenis_kriteria.ID_JENIS_KRITERIA','=','detil_kriteria.ID_JENIS_KRITERIA')
         ->where('bidang.ID_BIDANG','=',$id)->get();
-        return response()->json(['bidang' => $bidang]);
+        $template=DB::table('bidang')->select('TEMPLATE')->where('bidang.ID_BIDANG','=',$id)->first();
+        return response()->json(['bidang' => $bidang,'template' => $template]);
     }
     public function sendMail(Request $request){
         $request->validate(['name' => 'required','email' => 'required','phone' => 'required','message' => 'required']);
@@ -58,7 +59,7 @@ class PageController extends Controller
              ), function($message) use ($request)
                {
                   $message->from($request->email);
-                  $message->to('deaamartya3@gmail.com');
+                  $message->to('ilpresvokasi@gmail.com');
                });
     }
 }
