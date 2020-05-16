@@ -32,7 +32,7 @@
         </div>
       </ul>
     </div>
-    <div class="card-body" style="background-color: white;"> 
+    <div class="card-body shadow p-3 mb-5 bg-white rounded" style="background-color: white;"> 
       <!-- tambahin class "shadow setelah card-body han" -->
       @yield('konten')
     <p>isi content adkajkjd ajdiakjd jadi ini subjec percobaan dan janga lupa untuk
