@@ -88,6 +88,9 @@
 		      <li class="nav-item px-2 py-3 perbandingan">
 		        <a class="nav-link " href="{{url('/perbedaan-bidang')}}">Perbandingan Bidang</a>
 		      </li>
+		      <li class="nav-item px-2 py-3 perbandingan">
+		        <a class="nav-link " href="{{url('/tahap-pengajuan')}}">Tahap Pengajuan</a>
+		      </li>
 		    </ul>
 		  </div>
 		</div>

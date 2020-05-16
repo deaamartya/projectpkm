@@ -34,6 +34,9 @@ class PageController extends Controller
     public function aspekpenilaian(){
     	return view('aspekpenilaian');
     }
+    public function tahapPengajuan(){
+        return view('tahappengajuan');
+    }
     public function perbandingan(){
         $bidang = DB::table('bidang')->get();
         $jenis_kriteria = DB::table('jenis_kriteria')->get();
