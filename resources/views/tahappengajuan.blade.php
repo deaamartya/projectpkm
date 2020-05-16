@@ -14,9 +14,11 @@ array('judulkonten' => "Tahap Pengajuan PKM"))
 @section('script')
 <script type="text/javascript">
 $(document).ready(function() {
+	var clickedItem = $(".pengajuan");
     $(".nav-item").each( function() {
         $(this).removeClass("active");
     });
+    clickedItem.addClass("active");
 });
 </script>
 @endsection
