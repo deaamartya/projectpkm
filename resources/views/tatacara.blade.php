@@ -29,19 +29,7 @@ array('judulkonten' => "Tata Cara Penulisan PKM"))
     </div>
 </div>
 @endsection
-@section('konten-wa')
-@foreach ($wa as $w)
-{{$w->NOMER_TLP_1}}
-@endforeach
-@endsection
 
-@section('konten-line')
-line....
-@endsection
-
-@section('konten-email')
-email...
-@endsection
 
 @section('script')
 <script type="text/javascript">
