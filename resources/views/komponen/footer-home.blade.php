@@ -41,7 +41,7 @@
 		</div>
 		<div class="row m-0 py-1 justify-content-end" style="background-color: #2c4d86;">
 			<div class="col-12 align-self-center text-right">
-				<div class="container" style="font-size: 20pt;">
+				<div class="container-fluid" style="font-size: 20pt;">
 					<a class="m-1" style="display: inline-block;" title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCUYwloXmWyNZplsqg4MVERw">
 				        <i class="fab fa-youtube" style="color: white"></i>
 				    </a>
