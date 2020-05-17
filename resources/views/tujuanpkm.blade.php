@@ -6,8 +6,15 @@ array('judulkonten' => "Tujuan PKM"))
 @endsection
 
 @section('konten')
-<div class="row" style="background-color: white">
-	hello
+<div class="container" style="background-color: white; height:500px">
+<div class="row" >
+<div class="col" >
+<h3> Tujuan PKM</h3>
+<p style="text-align:left">
+PKM secara umum bertujuan untuk memandu mahasiswa menjadi pribadi yang (1) tahu dan taat aturan. (2) kreatif, inovatif dan (3) objektif kooperatif dalam membangun keragaman intelektual.
+</p>
+</div>
+</div>
 </div>
 @endsection
 
