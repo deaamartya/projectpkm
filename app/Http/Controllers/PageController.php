@@ -17,13 +17,16 @@ class PageController extends Controller
     	return view('home');
     }
     public function sejarah(){
-    	return view('sejarahpkm');
+        $contact = DB ::table('contact_person')->get();
+    	return view('sejarahpkm',['contact' =>$contact]);
     }
     public function tujuan(){
-    	return view('tujuanpkm');
+        $contact = DB ::table('contact_person')->get();
+    	return view('tujuanpkm',['contact' =>$contact]);
     }
     public function karakteristik(){
-    	return view('karakteristikumum');
+        $contact = DB ::table('contact_person')->get();
+    	return view('karakteristikumum',['contact' =>$contact]);
     }
     public function kriteria(){
     	return view('kriteriabidang');
@@ -31,10 +34,12 @@ class PageController extends Controller
     public function tatacara(){
         $tatacara = DB::table('tata_cara')->get();
         $wa = DB::table('contact_person')->where('ID_CP',1)->get();
-    	return view('tatacara',['tatacara' =>$tatacara,'wa' =>$wa]);
+        $contact = DB ::table('contact_person')->get();
+    	return view('tatacara',['tatacara' =>$tatacara,'wa' =>$wa,'contact' =>$contact]);
     }
     public function aspekpenilaian(){
-    	return view('aspekpenilaian');
+        $contact = DB ::table('contact_person')->get();
+    	return view('aspekpenilaian',['contact' =>$contact]);
     }
     public function perbandingan(){
         $bidang = DB::table('bidang')->get();
