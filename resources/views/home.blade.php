@@ -8,17 +8,21 @@
 <!-- Masukin kontennya disini. -->
 @endsection
 
+@section('master-addstyle')
+#button-tahap:hover{
+    background-color: #d68d00 !important;
+}
+@endsection
+
 @section('master-script')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $(".nav-item").bind("click", function(event) {
-        var clickedItem = $(".home");
-        $(".nav-item").each( function() {
-            $(this).removeClass("active");
-        });
-        clickedItem.addClass("active");
-    });
+      var clickedItem = $(".home");
+      $(".nav-item").each( function() {
+          $(this).removeClass("active");
+      });
+      clickedItem.addClass("active");
     
     $(".btn-submit").click(function(e){
         e.preventDefault();

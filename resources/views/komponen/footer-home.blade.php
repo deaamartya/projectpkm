@@ -3,7 +3,7 @@
 			<div class="col-md-8 col-lg-8 py-4" style="background-color: #2c4d86;">
 				<h3 class="text-center text-white footertext">Sudah menentukan PKM Anda?</h3>
 			</div>
-			<a href="{{url('/tahap-pengajuan')}}" class="col-md-4 col-lg-4 py-4" style="background-color: #ffb72b;text-decoration : none">
+			<a href="{{url('/tahap-pengajuan')}}" id="button-tahap" class="col-md-4 col-lg-4 py-4" style="background-color: #ffb72b;text-decoration : none">
 				<h3 class="text-center text-white footertext">Tahap Pengajuan</h3>
 			</a>
 		</div>

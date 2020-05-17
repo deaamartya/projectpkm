@@ -14,6 +14,9 @@
 		    color: white !important;
 		    font-size: 1rem;
 		}
+		.navbar-nav .nav-item:hover {
+		    background-color: #007ea8;
+		}
 		.footertext{
 			font-family: Tahoma;
 			font-size: 22pt;
