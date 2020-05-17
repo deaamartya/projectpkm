@@ -35,15 +35,6 @@
     <div class="card-body shadow p-3 mb-5 bg-white rounded" style="background-color: white;"> 
       <!-- tambahin class "shadow setelah card-body han" -->
       @yield('konten')
-    <p>isi content adkajkjd ajdiakjd jadi ini subjec percobaan dan janga lupa untuk
-    slalu mejaga kesehatan kita walupun sehat tetapi harus.
-    </p>
-    <p>isi content adkajkjd ajdiakjd jadi ini subjec percobaan dan janga lupa untuk
-    slalu mejaga kesehatan kita walupun sehat tetapi harus.
-    </p>
-    <p>isi content adkajkjd ajdiakjd jadi ini subjec percobaan dan janga lupa untuk
-    slalu mejaga kesehatan kita walupun sehat tetapi harus.
-    </p>
     </div>
   </div>
 </div>
