@@ -14,6 +14,9 @@
 		    color: white !important;
 		    font-size: 1rem;
 		}
+		.navbar-nav .nav-item:hover {
+		    background-color: #007ea8;
+		}
 		.footertext{
 			font-family: Tahoma;
 			font-size: 22pt;
@@ -42,14 +45,11 @@
 </head>
 <body>
 	<div class="container-fluid p-0 m-0">
-		<div class="row align-items-center mb-4 mx-0">
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 text-center">
-				<div class="row">
-					<a class="px-2 col-xl-7" href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-unair.png')}}"></a>
-					<span class="col-sm-12 col-md-12 col-lg-12 col-xl-5">Panduan PKM Fakultas Vokasi</span>
-				</div>
+		<div class="row align-items-center mb-2 mx-0">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center p-5">
+				<a href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-web.png')}}"></a>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-2 text-center">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-5 text-center">
 				<form class="form-inline">
 					<input class="form-control" type="search" placeholder="Search" style="width: 80%">
 				</form>
@@ -63,7 +63,7 @@
 		<div class="container-fluid px-0" style="max-width: 100%;">
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		    <ul class="navbar-nav mx-auto">
-		      <li class="nav-item active px-2 py-3 home">
+		      <li class="nav-item px-2 py-3 home">
 		        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item dropdown px-2 py-3 tentang">
@@ -88,13 +88,16 @@
 		      <li class="nav-item px-2 py-3 perbandingan">
 		        <a class="nav-link " href="{{url('/perbedaan-bidang')}}">Perbandingan Bidang</a>
 		      </li>
+		      <li class="nav-item px-2 py-3 pengajuan">
+		        <a class="nav-link " href="{{url('/tahap-pengajuan')}}">Tahap Pengajuan</a>
+		      </li>
 		    </ul>
 		  </div>
 		</div>
 	</nav>
 	</div>
 	</div>
-	<div class="container-fluid p-0 m-0" style="min-height: 1200px;">
+	<div class="container-fluid p-0 m-0" >
 	@yield('master-diataskonten')
 	@yield('master-konten')
 	</div>

@@ -3,9 +3,9 @@
 			<div class="col-md-8 col-lg-8 py-4" style="background-color: #2c4d86;">
 				<h3 class="text-center text-white footertext">Sudah menentukan PKM Anda?</h3>
 			</div>
-			<div class="col-md-4 col-lg-4 py-4" style="background-color: #ffb72b;">
+			<a href="{{url('/tahap-pengajuan')}}" id="button-tahap" class="col-md-4 col-lg-4 py-4" style="background-color: #ffb72b;text-decoration : none">
 				<h3 class="text-center text-white footertext">Tahap Pengajuan</h3>
-			</div>
+			</a>
 		</div>
 		<div class="row p-0 m-0">
 			<div class="col-12 row align-items-center m-0"style="background-color: #3c3c3c;padding: 40px 40px 125px 80px;">
@@ -41,7 +41,7 @@
 		</div>
 		<div class="row m-0 py-1 justify-content-end" style="background-color: #2c4d86;">
 			<div class="col-12 align-self-center text-right">
-				<div class="container" style="font-size: 20pt;">
+				<div class="container-fluid" style="font-size: 20pt;">
 					<a class="m-1" style="display: inline-block;" title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCUYwloXmWyNZplsqg4MVERw">
 				        <i class="fab fa-youtube" style="color: white"></i>
 				    </a>
