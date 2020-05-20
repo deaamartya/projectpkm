@@ -94,7 +94,7 @@
 	</nav>
 	</div>
 	</div>
-	<div class="container-fluid p-0 m-0" style="min-height: 1200px;">
+	<div class="container-fluid p-0 m-0" >
 	@yield('master-diataskonten')
 	@yield('master-konten')
 	</div>
