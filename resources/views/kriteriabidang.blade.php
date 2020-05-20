@@ -27,7 +27,7 @@ array('judulkonten' => "Kriteria Bidang PKM"))
     <tr>
       <td>{{$arrkriteria[0][$i]->NAMA_BIDANG}}</td>
       @php for($j=1;$j<$total;$j++){
-      $namajenis = $jenis_kriteria[$j-1]->NAMA_JENIS;
+        $namajenis = $jenis_kriteria[$j-1]->NAMA_JENIS;
       @endphp
       <td>@php echo($arrkriteria[$j][$i]->$namajenis) @endphp</td>
     @php
