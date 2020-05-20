@@ -1,5 +1,7 @@
 @extends('komponen/layout-konten')
 
+@section('judul','Aspek Penilaian PKM')
+
 @section('diataskonten')
 @include('/komponen/judulkonten', 
 array('judulkonten' => "Aspek Penilaian PKM"))

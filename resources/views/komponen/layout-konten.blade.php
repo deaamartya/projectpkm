@@ -1,5 +1,9 @@
 @extends('komponen/master')
 
+@section('master-judul')
+@yield('judul')
+@endsection
+
 @section('master-diataskonten')
 @yield('diataskonten')
 @endsection

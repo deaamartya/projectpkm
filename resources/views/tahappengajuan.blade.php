@@ -1,5 +1,7 @@
 @extends('komponen/master')
 
+@section('judul','Tahap Pengajuan PKM')
+
 @section('diataskonten')
 @include('/komponen/judulkonten', 
 array('judulkonten' => "Tahap Pengajuan PKM"))

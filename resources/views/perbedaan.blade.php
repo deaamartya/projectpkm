@@ -1,8 +1,10 @@
 @extends('komponen/layout-konten-normal')
 
+@section('judul','Perbandingan Bidang PKM')
+
 @section('diataskonten')
 @include('/komponen/judulkonten', 
-array('judulkonten' => "Perbedaan Bidang PKM"))
+array('judulkonten' => "Perbandingan Bidang PKM"))
 @endsection
 
 @section('addstyle')

@@ -1,5 +1,7 @@
 @extends('komponen/master')
 
+@section('master-judul','Home')
+
 @section('master-headlink')
 <meta name="csrf-token" content="{{ csrf_token() }}"/>
 @endsection
@@ -163,11 +165,6 @@
   </div>
 
 </div>
-</div>
-</div>
-<div class="row">
-<div class="col">
-
 </div>
 </div>
 </div>
