@@ -14,19 +14,25 @@ class PageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function home(){
-        $contact = DB ::table('contact_person')->get();
-    	return view('home',['contact' =>$contact]);
+        $contact = DB::table('contact_person')->get();
+        $penjelasan = DB::table('bidang')->select('NAMA_BIDANG','PENJELASAN')->get();
+        for($i=0;$i<count($penjelasan);$i++){
+            $caption[$penjelasan[$i]->NAMA_BIDANG] = $penjelasan[$i]->PENJELASAN;
+        }
+        $penjelasan = $caption;
+        // dump($penjelasan);
+    	return view('home',['contact' =>$contact,'penjelasan' => $penjelasan]);
     }
     public function sejarah(){
-        $contact = DB ::table('contact_person')->get();
+        $contact = DB::table('contact_person')->get();
     	return view('sejarahpkm',['contact' =>$contact]);
     }
     public function tujuan(){
-        $contact = DB ::table('contact_person')->get();
+        $contact = DB::table('contact_person')->get();
     	return view('tujuanpkm',['contact' =>$contact]);
     }
     public function karakteristik(){
-        $contact = DB ::table('contact_person')->get();
+        $contact = DB::table('contact_person')->get();
     	return view('karakteristikumum',['contact' =>$contact]);
     }
     public function kriteria(){

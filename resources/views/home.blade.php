@@ -20,36 +20,38 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <a class="m-1"  href="kriteria-bidang">
-      <img src="/img/logo-unair.png" class="d-block w-100" alt="">
+      <a class="" href="kriteria-bidang">
+        <img src="{{asset('/img/pkm-p.jpg')}}" class="d-block w-100" alt="">
       </a>
       <div class="carousel-caption d-none d-md-block">
         <h1>PKM - P</h1>
-    
+        <p>{{$penjelasan["PKM - P "]}}</p>
       </div>
     </div>
     <div class="carousel-item">
-    <a class="m-1"  href="kriteria-bidang">
-      <img src="/img/logo-unair.png" class="d-block w-100" alt="...">
+    <a class="" href="kriteria-bidang">
+      <img src="{{asset('/img/pkm-k.jpg')}}" class="d-block w-100" alt="...">
       </a>
       <div class="carousel-caption d-none d-md-block">
         <h1>PKM - K</h1>
+        <p>{{$penjelasan["PKM - K"]}}</p>
       </div>
     </div>
     <div class="carousel-item">
-    <a class="m-1"  href="kriteria-bidang">
-      <img src="/img/logo-unair.png" class="d-block w-100" alt="...">
+    <a class="" href="kriteria-bidang">
+      <img src="{{asset('/img/pkm-m.jpg')}}" class="d-block w-100" alt="...">
     </a>  
       <div class="carousel-caption d-none d-md-block">
         <h1>PKM - M</h1>
+        <p>{{$penjelasan["PKM - M"]}}</p>
       </div>
     </div>
     <div class="carousel-item">
-    <a class="m-1"  href="kriteria-bidang">
-      <img src="/img/logo-unair.png" class="d-block w-100" alt="...">
+    <a class="" href="kriteria-bidang">
+      <img src="{{asset('/img/pkm-t.jpg')}}" class="d-block w-100" alt="...">
       </a>
       <div class="carousel-caption d-none d-md-block">
-        <h1>PKM - T</h1>
+        <h1>PKM - T</h1><p>{{$penjelasan["PKM - T"]}}</p>
       </div>
     </div>
   </div>
@@ -74,35 +76,37 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <a class="m-1"  href="kriteria-bidang">
-      <img src="/img/logo-unair.png" class="d-block w-100" alt="...">
+    <a class=""  href="kriteria-bidang">
+      <img src="{{asset('/img/pkm-kc.jpg')}}" class="d-block w-100" alt="...">
     </a>
       <div class="carousel-caption d-none d-md-block">
         <h1>PKM - KC</h1>
+        <p>{{$penjelasan["PKM - KC"]}}</p>
       </div>
     </div>
     <div class="carousel-item">
-    <a class="m-1"  href="kriteria-bidang">
-      <img src="/img/logo-unair.png" class="d-block w-100" alt="...">
+    <a class=""  href="kriteria-bidang">
+      <img src="{{asset('/img/pkm-ai.jpg')}}" class="d-block w-100" alt="...">
     </a>
       <div class="carousel-caption d-none d-md-block">
         <h1>PKM - AI</h1>
+        <p>{{$penjelasan["PKM - AI"]}}</p>
       </div>
     </div>
     <div class="carousel-item">
-    <a class="m-1"  href="kriteria-bidang">
-      <img src="/img/logo-unair.png" class="d-block w-100" alt="...">
+    <a class=""  href="kriteria-bidang">
+      <img src="{{asset('/img/pkm-gt.jpg')}}" class="d-block w-100" alt="...">
     </a>
       <div class="carousel-caption d-none d-md-block">
-        <h1>PKM - GT</h1>
+        <h1>PKM - GT</h1><p>{{$penjelasan["PKM - GT"]}}</p>
       </div>
     </div>
     <div class="carousel-item">
-    <a class="m-1"  href="kriteria-bidang">
-      <img src="/img/logo-unair.png" class="d-block w-100" alt="...">
+    <a class=""  href="kriteria-bidang">
+      <img src="{{asset('/img/pkm-gfk.jpg')}}" class="d-block w-100" alt="...">
     </a>
       <div class="carousel-caption d-none d-md-block">
-        <h1>PKM - GFK</h1>
+        <h1>PKM - GFK</h1><p>{{$penjelasan["PKM - GFK"]}}</p>
       </div>
     </div>
   </div>
