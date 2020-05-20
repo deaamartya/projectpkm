@@ -1,4 +1,4 @@
-@extends('komponen/master')
+@extends('komponen/layout-konten-normal')
 
 @section('diataskonten')
 @include('/komponen/judulkonten', 
@@ -7,7 +7,37 @@ array('judulkonten' => "Kriteria Bidang PKM"))
 
 @section('konten')
 <div class="row" style="background-color: white">
-	hello
+<div class="col">
+<h3 style="text-align:center">Kriteria</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+            <th scope="col">SKEMA </th>
+            @foreach($jenis_kriteria as $b)
+              <th>{{$b->NAMA_JENIS}}</th>
+            @endforeach
+            <th scope="col">Tamplate PKM</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($bidang as $b)
+    <tr>
+        <td scope="col">{{$b -> NAMA_BIDANG}}</td>
+        
+        <td>{{$b->URAIAN_KRITERIA}}</td>
+        <td>{{$b->TEMPLATE}}</td>
+        </tr>
+    @endforeach
+    </tr>
+      <tr>
+      </tr>
+      <tr>
+      </tr>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
 </div>
 @endsection
 
