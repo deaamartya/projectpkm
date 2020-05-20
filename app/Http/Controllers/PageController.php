@@ -30,15 +30,23 @@ class PageController extends Controller
     	return view('karakteristikumum',['contact' =>$contact]);
     }
     public function kriteria(){
-        $bidang=DB::table('bidang')
-        ->select('NAMA_BIDANG','NAMA_JENIS','TEMPLATE', DB::raw("COALESCE(URAIAN_KRITERIA,'Tidak ada') as URAIAN_KRITERIA"))
-        ->join('detil_kriteria','detil_kriteria.ID_BIDANG','=','bidang.ID_BIDANG')
-        ->join('jenis_kriteria','jenis_kriteria.ID_JENIS_KRITERIA','=','detil_kriteria.ID_JENIS_KRITERIA')
-        ->get();
         $kriteria=DB::table('detil_kriteria')->where('ID_BIDANG',1)->get();
         $jenis_kriteria = DB::table('jenis_kriteria')->get();
-       
-        return view('kriteriabidang',['bidang' => $bidang,'jenis_kriteria' => $jenis_kriteria,'kriteria' => $kriteria]);
+        
+        $arrkriteria;
+        $arrkriteria[0]=DB::table('bidang')->select('NAMA_BIDANG','TEMPLATE')->get();
+
+        for($i=1;$i<=count($jenis_kriteria);$i++){
+            $idjenis = $jenis_kriteria[$i-1]->ID_JENIS_KRITERIA;
+            $namajenis = $jenis_kriteria[$i-1]->NAMA_JENIS;
+            $arrkriteria[$i]=DB::table('bidang')
+            ->select(DB::raw("COALESCE(URAIAN_KRITERIA,'Tidak ada') AS '".$namajenis."'"))
+            ->join('detil_kriteria','detil_kriteria.ID_BIDANG','=','bidang.ID_BIDANG')
+            ->join('jenis_kriteria','jenis_kriteria.ID_JENIS_KRITERIA','=','detil_kriteria.ID_JENIS_KRITERIA')
+            ->where('jenis_kriteria.ID_JENIS_KRITERIA','=',$idjenis)->get();
+        }
+
+        return view('kriteriabidang',['arrkriteria' => $arrkriteria,'jenis_kriteria' => $jenis_kriteria,'kriteria' => $kriteria]);
     }
     public function tatacara(){
         $tatacara = DB::table('tata_cara')->get();

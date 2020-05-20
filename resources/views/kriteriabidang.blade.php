@@ -12,29 +12,32 @@ array('judulkonten' => "Kriteria Bidang PKM"))
 <table class="table table-bordered">
   <thead>
     <tr>
-            <th scope="col">SKEMA </th>
-            @foreach($jenis_kriteria as $b)
-              <th>{{$b->NAMA_JENIS}}</th>
-            @endforeach
-            <th scope="col">Tamplate PKM</th>
+        <th scope="col">SKEMA </th>
+        @foreach($jenis_kriteria as $b)
+          <th>{{$b->NAMA_JENIS}}</th>
+        @endforeach
+        <th scope="col">Tamplate PKM</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($bidang as $b)
+    @php
+    $total = count($arrkriteria);
+    for($i=0;$i<$total;$i++){
+    @endphp
     <tr>
-        <td scope="col">{{$b -> NAMA_BIDANG}}</td>
-        
-        <td>{{$b->URAIAN_KRITERIA}}</td>
-        <td>{{$b->TEMPLATE}}</td>
-        </tr>
-    @endforeach
+      <td>{{$arrkriteria[0][$i]->NAMA_BIDANG}}</td>
+      @php for($j=1;$j<$total;$j++){
+      $namajenis = $jenis_kriteria[$j-1]->NAMA_JENIS;
+      @endphp
+      <td>@php echo($arrkriteria[$j][$i]->$namajenis) @endphp</td>
+    @php
+      }
+    @endphp
+      <td><a href="{{$arrkriteria[0][$i]->TEMPLATE}}">{{$arrkriteria[0][$i]->TEMPLATE}}</a></td>
     </tr>
-      <tr>
-      </tr>
-      <tr>
-      </tr>
-    </tr>
-    
+    @php
+    }
+    @endphp
   </tbody>
 </table>
 </div>
