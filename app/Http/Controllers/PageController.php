@@ -14,25 +14,41 @@ class PageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function home(){
-    	return view('home');
+        $contact = DB ::table('contact_person')->get();
+    	return view('home',['contact' =>$contact]);
     }
     public function sejarah(){
-    	return view('sejarahpkm');
+        $contact = DB ::table('contact_person')->get();
+    	return view('sejarahpkm',['contact' =>$contact]);
     }
     public function tujuan(){
-    	return view('tujuanpkm');
+        $contact = DB ::table('contact_person')->get();
+    	return view('tujuanpkm',['contact' =>$contact]);
     }
     public function karakteristik(){
-    	return view('karakteristikumum');
+        $contact = DB ::table('contact_person')->get();
+    	return view('karakteristikumum',['contact' =>$contact]);
     }
     public function kriteria(){
-    	return view('kriteriabidang');
+        $bidang=DB::table('bidang')
+        ->select('NAMA_BIDANG','NAMA_JENIS','TEMPLATE', DB::raw("COALESCE(URAIAN_KRITERIA,'Tidak ada') as URAIAN_KRITERIA"))
+        ->join('detil_kriteria','detil_kriteria.ID_BIDANG','=','bidang.ID_BIDANG')
+        ->join('jenis_kriteria','jenis_kriteria.ID_JENIS_KRITERIA','=','detil_kriteria.ID_JENIS_KRITERIA')
+        ->get();
+        $kriteria=DB::table('detil_kriteria')->where('ID_BIDANG',1)->get();
+        $jenis_kriteria = DB::table('jenis_kriteria')->get();
+       
+        return view('kriteriabidang',['bidang' => $bidang,'jenis_kriteria' => $jenis_kriteria,'kriteria' => $kriteria]);
     }
     public function tatacara(){
-    	return view('tatacara');
+        $tatacara = DB::table('tata_cara')->get();
+        $wa = DB::table('contact_person')->where('ID_CP',1)->get();
+        $contact = DB ::table('contact_person')->get();
+    	return view('tatacara',['tatacara' =>$tatacara,'wa' =>$wa,'contact' =>$contact]);
     }
     public function aspekpenilaian(){
-    	return view('aspekpenilaian');
+        $contact = DB ::table('contact_person')->get();
+    	return view('aspekpenilaian',['contact' =>$contact]);
     }
     public function tahapPengajuan(){
         return view('tahappengajuan');

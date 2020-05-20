@@ -10,6 +10,7 @@
 @section('master-konten')
 <div class="container">
 <div class="row">
+
   <div class="card1 col-xs-6 col-sm-8 col-md-8 col-lg-8 col-xl-8" style="margin-top:-5rem;margin-bottom:70px;">
     <div class="card-header"> 
       <ul class="nav nav-tabs card-header-tabs">
@@ -33,52 +34,52 @@
         </div>
       </ul>
     </div>
-    <div class="card-body" style="background-color: white;">
+    <div class="card-body shadow p-3 mb-5 bg-white rounded" style="background-color: white;">
+    @yield('konten')
       
-      @yield('konten')
-      
-    <p>isi content adkajkjd ajdiakjd jadi ini subjec percobaan dan janga lupa untuk
-    slalu mejaga kesehatan kita walupun sehat tetapi harus.
-    </p>
-    <p>isi content adkajkjd ajdiakjd jadi ini subjec percobaan dan janga lupa untuk
-    slalu mejaga kesehatan kita walupun sehat tetapi harus.
-    </p>
-    <p>isi content adkajkjd ajdiakjd jadi ini subjec percobaan dan janga lupa untuk
-    slalu mejaga kesehatan kita walupun sehat tetapi harus.
-    </p>
     </div>
   </div>
 
   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="margin-top:-35px">
-  <div class="card-head" style="background-color: white;height: 15rem;">
-    <div class="container" style="font-size: 20pt; text-align:center;">
+  <div class="card shadow p-3 mb-5 bg-white rounded";>
+    <div class="card-head" style="background-color: white;">
+      <div class="container" style="font-size: 20pt; text-align:center;">
       <a class="m-1" style="display: inline-block;" >
         <i class="fas fa-id-badge" style="color: black"></i>
       </a>
           CONTACT US
-    </div>
-    <div class="card-body">
-      <div class="container" style="font-size: 18pt;;">
+          
+      </div>
+      
+      <div class="card-body ";>
+      @foreach($contact as $c)
+      {{$c ->ORGANISASI}}
+      <div class="container" style="font-size: 18pt;">
         <a class="m-1" style="display: inline-block;">
         <i class="fab fa-whatsapp-square" style="color : green"></i>
         </a>
-        no...
+        {{$c -> NOMER_TLP_1}}
       </div>
-      <div class="container" style="font-size: 18pt;;">
+      <div class="container" style="font-size: 18pt;">
         <a class="m-1" style="display: inline-block;">
         <i class="fab fa-line" style="color : green"></i>
         </a>
-        no...
+        @yield('konten-line')
+        
       </div>
-      <div class="container" style="font-size: 18pt;;">
+      <div class="container" style="font-size: 18pt;">
         <a class="m-1" style="display: inline-block;">
         <i class="fas fa-envelope-open-text" style="color : orange"></i>
         </a>
-        no...
+        @yield('konten-email')
+        
+      </div>
+      @endforeach
       </div>
     </div>
+    </div>
   </div>
-  </div>
+  
 </div>
 </div>
 @endsection
