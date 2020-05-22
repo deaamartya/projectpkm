@@ -57,26 +57,41 @@
       
       <div class="card-body ";>
       @foreach($contact as $c)
-      {{$c ->ORGANISASI}}
-      <div class="container" style="font-size: 18pt;">
-        <a class="m-1" style="display: inline-block;">
-        <i class="fab fa-whatsapp-square" style="color : green"></i>
-        </a>
-        {{$c -> NOMER_TLP_1}}
-      </div>
-      <div class="container" style="font-size: 18pt;">
-        <a class="m-1" style="display: inline-block;">
-        <i class="fab fa-line" style="color : green"></i>
-        </a>
-        @yield('konten-line')
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="heading{{$c->ID_CP}}">
+            <h2 class="mb-0">
+               <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$c->ID_CP}}" aria-expanded="true" aria-controls="collapseOne">
+                {{$c ->ORGANISASI}}
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapse{{$c->ID_CP}}" class="collapse" aria-labelledby="heading{{$c->ID_CP}}" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container" style="font-size: 18pt;">
+                 <a class="m-1" style="display: inline-block;">
+                  <i class="fab fa-whatsapp-square" style="color : green"></i>
+                 </a>
+                   {{$c -> NOMER_TLP_1}}
+               </div>
+              <div class="container" style="font-size: 18pt;">
+                 <a class="m-1" style="display: inline-block;">
+                  <i class="fab fa-line" style="color : green"></i>
+                 </a>
+                   @yield('konten-line')
         
-      </div>
-      <div class="container" style="font-size: 18pt;">
-        <a class="m-1" style="display: inline-block;">
-        <i class="fas fa-envelope-open-text" style="color : orange"></i>
-        </a>
-        @yield('konten-email')
+              </div>
+              <div class="container" style="font-size: 18pt;">
+                 <a class="m-1" style="display: inline-block;">
+                  <i class="fas fa-envelope-open-text" style="color : orange"></i>
+                 </a>
+                 {{$c -> EMAIL_CP}}
         
+              </div>   
+            </div>
+          </div>
+        </div>
       </div>
       @endforeach
       </div>
