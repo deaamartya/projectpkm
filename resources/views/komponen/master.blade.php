@@ -35,6 +35,19 @@
 		body{
 			font-size: 1rem;
 		}
+		@media screen and (min-width: 601px) {
+		  .judulkonten {
+		    font-size: 4.5rem;
+		  }
+		}
+
+		/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+		@media screen and (max-width: 600px) {
+		  .judulkonten {
+		    font-size: 3.5rem;
+		    padding: 10%;
+		  }
+		}
 		
 		@yield('master-addstyle')
 	</style>
@@ -49,10 +62,10 @@
 <body>
 	<div class="container-fluid p-0 m-0">
 		<div class="row align-items-center mb-2 mx-0">
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center p-5">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 text-center p-4">
 				<a href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-web.png')}}"></a>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-5 text-center">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-4 text-center">
 				<form class="form-inline">
 					<input class="form-control" type="search" placeholder="Search" style="width: 80%">
 				</form>

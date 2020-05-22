@@ -123,11 +123,13 @@ array('judulkonten' => "Perbandingan Bidang PKM"))
 				@endforeach
 				</select>
 			</td>
-			<td valign="middle"><select class="selectpicker bidang" id="bidang4" data-size="5" title="Pilih Bidang PKM" data-width="100%">
+			<td valign="middle">
+				<select class="selectpicker bidang" id="bidang4" data-size="5" title="Pilih Bidang PKM" data-width="100%">
 				@foreach($bidang as $b)
 				<option value="{{$b->ID_BIDANG}}">{{$b->NAMA_BIDANG}}</option>
 				@endforeach
-			</select></td>
+				</select>
+		</td>
 		</tr>
 		@foreach($jenis_kriteria as $b)
 		<tr class="rowdata">
@@ -288,7 +290,7 @@ $(document).ready(function() {
 					$("#"+options[i].value+idselect).html(bidang[i]["URAIAN_KRITERIA"]);
 				}
 				console.log(data.template);
-				$("#template"+idselect).html('<a href="'+data.template["TEMPLATE"]+'">'+data.template["TEMPLATE"]+'</a>')
+				$("#template"+idselect).html('<a href="'+data.template["TEMPLATE"]+'">'+data.template["TEMPLATE"]+'</a>');
 			},
             error: function(data) {
               // console.log(data);
