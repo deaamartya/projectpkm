@@ -9,10 +9,10 @@
 @section('master-konten')
 
 <!-- Masukin kontennya disini. -->
-<div class="container">
-  <div class="row mb-5">
-    <div class="col" style="text-align:center" >
-      <div class="container">
+
+  <div class="row mb-5 p-2 justify-content-center m-0">
+    <div class="col-xl-5" style="text-align:center" >
+      <div class="row">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="margin-top:50px">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -67,7 +67,7 @@
         </a>
         </div>
       </div>
-      <div class="container">
+      <div class="row">
         <div id="carouselExampleCaptions1" class="carousel slide" data-ride="carousel" style="margin-top:50px">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions1" data-slide-to="0" class="active"></li>
@@ -122,14 +122,13 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 mt-5">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 mt-5">
       <div class="card shadow p-3 mb-5 bg-white rounded">
-        <div class="card-head" style="background-color: white;">
-          <div class="container" style="font-size: 20pt; text-align:center;">
-            <a class="m-1" style="display: inline-block;">
+        <div class="card-head my-2" style="background-color: white;">
+            <h6 class="m-1 text-center" style="font-size: 2rem;">
               <i class="fas fa-id-badge mr-2" style="color: black"></i>CONTACT US
-            </a>
-          </div>
+            </h6>
+        </div>
         <div class="accordion" id="accordionExample">
           @foreach($contact as $c)
             <div class="card mt-2">
@@ -185,9 +184,7 @@
         </div>
         </div>
       </div>
-    </div>
   </div>
-</div>
 @endsection
 
 @section('master-addstyle')
