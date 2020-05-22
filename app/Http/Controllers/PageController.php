@@ -65,7 +65,8 @@ class PageController extends Controller
     	return view('aspekpenilaian',['contact' =>$contact]);
     }
     public function tahapPengajuan(){
-        return view('tahappengajuan');
+        $contact = DB ::table('contact_person')->get();
+        return view('tahappengajuan',['contact' =>$contact]);
     }
     public function perbandingan(){
         $bidang = DB::table('bidang')->get();
