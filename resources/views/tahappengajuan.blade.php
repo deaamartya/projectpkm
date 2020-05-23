@@ -77,7 +77,7 @@ array('judulkonten' => "Tahap Pengajuan PKM"))
         </p>
         </div>
         <div class="tab-pane" id="tabs-3" role="tabpanel" style="background-color:white;">
-        <p>
+        <p style="text-align:justify">
 </br>1.  Operator mengunggah Berita Acara Hasil Evaluasi Internal, mendaftarkan usulan (judul, Ketua Tim Pengusul, Dosen Pendamping), membuat akun ketua tim pengusul, dan membuat akun Dosen Pendamping (akun ketua tim pengusul dan akun Dosen Pendamping akan di buat otomatis oleh sistem setelah judul usulan di daftarkan) 
 </br>2.	 Mahasiswa mengisi bagian kelengkapan usulan artikel (sampul dan pengesahan) 
 </br>3.	 Mahasiswa mengunggah bagian halaman utama artikel (isi sampai dengan lampiran) 
@@ -93,7 +93,7 @@ array('judulkonten' => "Tahap Pengajuan PKM"))
         </p>
         </div>
         <div class="tab-pane" id="tabs-4" role="tabpanel" style="background-color:white;">
-        <p>
+        <p style="text-align:justify">
         </br>1.	Operator mengunggah Berita Acara Hasil Evaluasi Internal, mendaftarkan usulan (judul, Ketua Tim Pengusul, Dosen Pendamping), membuat akun ketua tim pengusul, dan membuat akun Dosen Pendamping (akun ketua tim pengusul dan akun Dosen Pendamping akan di buat otomatis oleh sistem setelah judul usulan di daftarkan) 
         </br>2.	Mahasiswa mengunggah video PKM-GFK ke YOUTUBE durasi 3 sampai 7 menit dengan resolusi minimal 480p 
         </br>3.	Mahasiswa mengisi bagian kelengkapan usulan proposal (sampul dan pengesahan) 
