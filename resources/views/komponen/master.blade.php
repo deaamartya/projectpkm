@@ -63,7 +63,7 @@
 	<div class="container-fluid p-0 m-0">
 		<div class="row align-items-center mb-2 mx-0">
 			<div class="col-sm-12 col-md-12 col-lg-10 col-xl-5 text-center p-5">
-				<a href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-web.png')}}"></a>
+				<a href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-web.png')}}" style="max-width: 467px;"></a>
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-4 text-center">
 				<form class="form-inline">
