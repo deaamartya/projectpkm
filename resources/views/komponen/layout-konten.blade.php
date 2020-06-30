@@ -29,7 +29,7 @@
 @section('master-konten')
 <div class="row justify-content-center m-0">
 
-  <div class="card1 col-lg-12 col-xl-6" style="margin-top:-5rem;margin-bottom:70px;">
+  <div class="card1 col-lg-12 col-xl-9" style="margin-top:-5rem;margin-bottom:70px;">
     <div class="card-header" style="background-color: transparent;"> 
       <ul class="nav nav-tabs card-header-tabs">
         <div class="row nav-item" style="background-color:white;margin-left:1px">
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <div class="col-lg-12 col-xl-3" style="margin-top: -36px;">
+<!--   <div class="col-lg-12 col-xl-3" style="margin-top: -36px;">
       <div class="card shadow p-3 mb-5 bg-white rounded">
         <div class="card-head" style="background-color: white;">
           <div class="container" style="font-size: 2rem; text-align:center;">
@@ -121,7 +121,7 @@
         </div>
         </div>
       </div>
-    </div>
+    </div> -->
   
 </div>
 @endsection

@@ -13,7 +13,7 @@
 @endsection
 @section('master-konten')
 <div class="row p-0 m-0">
-  <div class="card1 col-xs-6 col-sm-8 col-md-12 col-lg-12 col-xl-12" style="margin-top:-5rem;margin-bottom:70px;">
+  <div class="card1 col-12" style="margin-top:-5rem;margin-bottom:70px;">
     <div class="card-header"  style="background-color: transparent;"> 
       <ul class="nav nav-tabs card-header-tabs">
         <div class="row nav-item" style="background-color:white;margin-left:1px">

@@ -73,6 +73,10 @@ class PageController extends Controller
         $jenis_kriteria = DB::table('jenis_kriteria')->get();
         return view('perbedaan',['bidang' => $bidang,'jenis_kriteria' => $jenis_kriteria]);
     }
+    public function contactUs(){
+        $data = DB::table('contact_person')->get();
+        return view('contact',['data' => $data]);
+    }
     public function getData($id){
         $bidang=DB::table('bidang')
         ->select('NAMA_BIDANG','NAMA_JENIS','TEMPLATE', DB::raw("COALESCE(URAIAN_KRITERIA,'Tidak ada') as URAIAN_KRITERIA"))

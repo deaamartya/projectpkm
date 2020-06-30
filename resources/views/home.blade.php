@@ -11,7 +11,7 @@
 <!-- Masukin kontennya disini. -->
 
   <div class="row mb-5 p-2 justify-content-center m-0">
-    <div class="col-xl-5" style="text-align:center" >
+    <div class="col-xl-8" style="text-align:center" >
       <div class="row">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="margin-top:50px">
         <ol class="carousel-indicators">
@@ -122,7 +122,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 mt-5">
+    <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 mt-5 ml-2">
       <div class="card shadow p-3 mb-5 bg-white rounded">
         <div class="card-head my-2" style="background-color: white;">
             <h6 class="m-1 text-center" style="font-size: 2rem;">
@@ -183,7 +183,7 @@
           @endforeach
         </div>
         </div>
-      </div>
+    </div> -->
   </div>
 @endsection
 

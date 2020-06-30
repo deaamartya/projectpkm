@@ -61,8 +61,8 @@
 </head>
 <body>
 	<div class="container-fluid p-0 m-0">
-		<div class="row align-items-center mb-2 mx-0">
-			<div class="col-sm-12 col-md-12 col-lg-10 col-xl-5 text-center p-5">
+		<div class="row align-items-center mb-1 mx-0">
+			<div class="col-sm-12 col-md-12 col-lg-10 col-xl-5 text-center p-3">
 				<a href="{{url('/')}}"><img class="img-fluid" src="{{asset('/img/logo-web.png')}}" style="max-width: 467px;"></a>
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3 offset-xl-4 text-center">
@@ -79,10 +79,10 @@
 		<div class="container-fluid px-0" style="max-width: 100%;">
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		    <ul class="navbar-nav mx-auto">
-		      <li class="nav-item px-2 py-3 home">
+		      <li class="nav-item px-2 py-2 home mx-1">
 		        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
 		      </li>
-		      <li class="nav-item dropdown px-2 py-3 tentang">
+		      <li class="nav-item dropdown px-2 py-2 tentang mx-1">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Tentang PKM
 		        </a>
@@ -92,20 +92,23 @@
 		          <a class="dropdown-item karakteristik" href="{{url('/karakteristik-umum')}}">Karakteristik Umum</a>
 		        </div>
 		      </li>
-		      <li class="nav-item px-2 py-3 kriteria">
+		      <li class="nav-item px-2 py-2 kriteria mx-1">
 		        <a class="nav-link" href="{{url('/kriteria-bidang')}}">Kriteria Bidang PKM</a>
 		      </li>
-		      <li class="nav-item px-2 py-3 tatacara">
+		      <li class="nav-item px-2 py-2 tatacara mx-1">
 		        <a class="nav-link " href="{{url('/tata-cara')}}">Tata Cara Penulisan</a>
 		      </li>
-		      <li class="nav-item px-2 py-3 aspek">
+		      <li class="nav-item px-2 py-2 aspek mx-1">
 		        <a class="nav-link " href="{{url('/aspek-penilaian')}}">Aspek Penilaian</a>
 		      </li>
-		      <li class="nav-item px-2 py-3 perbandingan">
+		      <li class="nav-item px-2 py-2 perbandingan mx-1">
 		        <a class="nav-link " href="{{url('/perbedaan-bidang')}}">Perbandingan Bidang</a>
 		      </li>
-		      <li class="nav-item px-2 py-3 pengajuan">
+		      <li class="nav-item px-2 py-2 pengajuan mx-1">
 		        <a class="nav-link " href="{{url('/tahap-pengajuan')}}">Tahap Pengajuan</a>
+		      </li>
+		      <li class="nav-item px-2 py-2 pengajuan mx-1">
+		        <a class="nav-link " href="{{url('/contact-us')}}">Contact Us</a>
 		      </li>
 		    </ul>
 		  </div>
