@@ -5,12 +5,13 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/favicon-32x32.png')}}">
 	<link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/favicon-16x16.png')}}">
 	<title>@yield('master-judul')</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700" rel="stylesheet" type="text/css">
 	<style>
 		.active{
 			background-color: #007ea8;
 		}
 		.navbar-nav{
-			font-family: Open Sans;
+			font-family: 'Open Sans';
 			font-size: 1rem;
 		}
 		.navbar-dark .navbar-nav .nav-link {
@@ -26,7 +27,7 @@
 			font-weight: 600;
 		}
 		.textinfo{
-			font-family: Open Sans;
+			font-family: 'Open Sans';
 			font-size: 1rem;
 		}
 		.shadow {
