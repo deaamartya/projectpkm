@@ -30,6 +30,7 @@ array('judulkonten' => "Karakteristik Umum PKM"))
     <img src="img/karakteristik-umum.png" width="100%" height="auto">
 </div>
 </div>
+<p style="text-align:left; font-style:italic; font-size: 13px; text-align:right">Sumber : Buku Pedoman PKM 2020 Kemenristekdikti</p>
 @endsection
 
 @section('script')

@@ -23,6 +23,7 @@ array('judulkonten' => "Sejarah PKM"))
     
     </div>
 </div>
+<p style=" font-style:italic; font-size: 13px; text-align:right">Sumber : Buku Pedoman PKM 2020 Kemenristekdikti</p>
 @endsection
 
 @section('script')
