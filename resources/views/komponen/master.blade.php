@@ -108,7 +108,7 @@
 		      <li class="nav-item px-2 py-2 pengajuan mx-1">
 		        <a class="nav-link " href="{{url('/tahap-pengajuan')}}">Tahap Pengajuan</a>
 		      </li>
-		      <li class="nav-item px-2 py-2 pengajuan mx-1">
+		      <li class="nav-item px-2 py-2 contact mx-1">
 		        <a class="nav-link " href="{{url('/contact-us')}}">Contact Us</a>
 		      </li>
 		    </ul>
