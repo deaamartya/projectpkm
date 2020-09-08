@@ -153,6 +153,7 @@ array('judulkonten' => "Perbandingan Bidang PKM"))
 	</div>
 </div>
 </div>
+<p style="text-align:left; font-style:italic; font-size: 13px; text-align:right">Sumber : Buku Pedoman PKM 2020 Kemenristekdikti</p>
 @endsection
 
 @section('script')
